@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<style>
+			
+
+			/* Carousel base class */
+		    .carousel {
+		      margin-bottom: 60px;
+		    }
+
+		    .carousel .container {
+		      position: relative;
+		      z-index: 9;
+		    }
+
+		    .carousel-control {
+		      height: 80px;
+		      margin-top: 0;
+		      font-size: 120px;
+		      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+		      background-color: transparent;
+		      border: 0;
+		    }
+
+		    .carousel .item {
+		      height: 500px;
+		    }
+		    .carousel img {
+		      position: absolute;
+		      top: 0;
+		      left: 0;
+		      min-width: 100%;
+		      height: 500px;
+		    }
+
+		    .carousel-caption {
+		      background-color: transparent;
+		      position: static;
+		      max-width: 550px;
+		      padding: 0 20px;
+		      margin-top: 200px;
+		    }
+		    .carousel-caption h1,
+		    .carousel-caption .lead {
+		      margin: 0;
+		      line-height: 1.25;
+		      color: #fff;
+		      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+		    }
+		    .carousel-caption .btn {
+		      margin-top: 10px;
+		    }
+
+			.featurette-divider {
+			  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+			}
+			.featurette {
+			  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+			  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+			}
+			.featurette-image {
+			  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+			}
+
+			/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+			.featurette-image.pull-left {
+			  margin-right: 40px;
+			}
+			.featurette-image.pull-right {
+			  margin-left: 40px;
+			}
+
+			/* Thin out the marketing headings */
+			.featurette-heading {
+			  font-size: 50px;
+			  font-weight: 300;
+			  line-height: 1;
+			  letter-spacing: -1px;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		
+
+		<!-- Carousel ================================================== -->
+	    <div id="myCarousel" class="carousel slide">
+		  <!-- Carousel items -->
+		  <div class="carousel-inner">
+		    <div class="active item">
+		      	<img src="img/cover.jpg" alt="">
+				<div class="container">
+					<div class="carousel-caption">
+					  <h1>Falcon</h1>
+					  <p class="lead">A fast speedy WSGI framework for python</p>
+					  
+					</div>
+				</div>
+		    </div>
+		  </div>
+		</div>
+	    <!-- /.carousel -->
+
+
+	    <!-- Marketing messaging and featurettes ================================================== -->
+	    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+	    <div class="container marketing">
+			<a href="https://github.com/racker/falcon" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+			<!-- Three columns of text below the carousel -->
+			<div class="row">
+				<div class="span4">
+				  <img class="img-circle" data-src="holder.js/140x140">
+				  <h2>Features</h2>
+				  <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+				  <p><a class="btn" href="#Features">View details &raquo;</a></p>
+				</div><!-- /.span4 -->
+				<div class="span4">
+				  <img class="img-circle" data-src="holder.js/140x140">
+				  <h2>Benefits</h2>
+				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				  <p><a class="btn" href="#Benefits">View details &raquo;</a></p>
+				</div><!-- /.span4 -->
+				<div class="span4">
+				  <img class="img-circle" data-src="holder.js/140x140">
+				  <h2>Metrics</h2>
+				  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				  <p><a class="btn" href="#Metrics">View details &raquo;</a></p>
+				</div><!-- /.span4 -->
+			</div><!-- /.row -->
+
+
+		    <!-- START THE FEATURETTES -->
+
+			<hr class="featurette-divider">
+
+			<div class="featurette">
+				<a id="Features"></a>
+				<img class="featurette-image pull-right" src="">
+				<h2 class="featurette-heading">Features.</h2>
+				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<div class="featurette">
+				<a id="Benefits"></a>
+				<img class="featurette-image pull-right" src="">
+				<h2 class="featurette-heading">Benefits.</h2>
+				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<div class="featurette">
+				<a id="Metrics"></a>
+				<img class="featurette-image pull-right" src="">
+				<h2 class="featurette-heading">Metrics.</h2>
+				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<!-- /END THE FEATURETTES -->
+
+			<!-- FOOTER -->
+			<footer>
+				<p class="pull-right"><a href="#">Back to top</a></p>
+				<p>&copy; 2013 Rackspace Hosting &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+			</footer>
+	    </div>
+
+	    <script src="js/jquery.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+
+	</body>
+</html>
