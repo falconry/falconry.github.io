@@ -83,6 +83,25 @@
 			  letter-spacing: -1px;
 			}
 
+			table.benchmarks{
+				border-collapse: 1;
+				border: 1px solid #000;
+			}
+
+			table.benchmarks tr td{
+				width: 100px;
+			}
+			table.benchmarks tr th,
+			table.benchmarks tr td{
+				text-align: right;
+				border: 1px solid #000;
+				padding: 10px;
+			}
+
+			table.benchmarks tr.highlight td{
+				background-color: #ccc;
+			}
+
 		</style>
 
 	</head>
@@ -124,13 +143,13 @@
 				<div class="span4">
 				  <img class="img-circle" data-src="holder.js/140x140">
 				  <h2>Benefits</h2>
-				  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				  <p>Performance and Freedom</p>
 				  <p><a class="btn" href="#Benefits">View details &raquo;</a></p>
 				</div><!-- /.span4 -->
 				<div class="span4">
 				  <img class="img-circle" data-src="holder.js/140x140">
-				  <h2>Metrics</h2>
-				  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				  <h2>Benchmarks</h2>
+				  <p>10x More Requests</p>
 				  <p><a class="btn" href="#Metrics">View details &raquo;</a></p>
 				</div><!-- /.span4 -->
 			</div><!-- /.row -->
@@ -164,7 +183,22 @@
 				<a id="Benefits"></a>
 				<img class="featurette-image pull-right" src="">
 				<h2 class="featurette-heading">Benefits.</h2>
-				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+				<p class="lead">
+					X is cool, and everyone is using it, so why mess with a good thing?
+				</p>
+				<p class="lead">
+					<strong>Performance.</strong>
+					Unlike other Python web frameworks, Falcon won't bottleneck your API's performance. Most frameworks max out at serving simple "hello world" requests at a few thousand req/sec, while Falcon can easily serve 10 times as many on the same hardware. Even Bottle, one of the fastest frameworks we tested, takes twice as long to serve requests compared to Falcon.
+				</p>
+				<p class="lead">
+					<strong>Freedom.</strong>
+					Falcon isn't very opinionated. In other words, the framework leaves a lot of decisions and implementation details to you, the API developer, which means you will need to use your head a little more than other frameworks, and probably write a little more code. On the other hand, this gives you a lot of freedom to customize and tune your implementation in order to create a solution that stands out from the crowd.
+				</p>
+				<p class="lead">
+					<strong>Huh?</strong>
+					I have no idea what you're talking about, but here's a <a href="http://www.thepartyanimal-blog.org/wp-content/uploads/2012/04/pancake_bunny.jpg" target="_blank" rel="nofollow">bunny</a> with a pancake on its head.
+				</p>
+				<p class="lead">
 			</div>
 
 			<hr class="featurette-divider">
@@ -172,8 +206,56 @@
 			<div class="featurette">
 				<a id="Metrics"></a>
 				<img class="featurette-image pull-right" src="">
-				<h2 class="featurette-heading">Metrics.</h2>
-				<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+				<h2 class="featurette-heading">Benchmarks.</h2>
+				<p class="lead">
+					Scenario: API calls return a basic "Hello World" response.<br/>
+					Iterations: 100,000 rounds per test.  
+					<table class="benchmarks">
+						<tr>
+							<th>Framework</th>
+							<th>req/sec</th>
+							<th>ms/req</th>
+							<th>Performance</th>
+						</tr>
+						<tr class="highlight">
+							<td>Falcon</td>
+							<td>29,529</td>
+							<td>0.034</td>
+							<td>9x</td>
+						</tr>
+						<tr>
+							<td>Wheezy</td>
+							<td>26,638</td>
+							<td>0.038</td>
+							<td>8x</td>
+						</tr>
+						<tr>
+							<td>Bottle</td>
+							<td>14,489</td>
+							<td>0.069</td>
+							<td>4x</td>
+						</tr>
+						<tr>
+							<td>Werkzeug</td>
+							<td>7,448</td>
+							<td>0.134</td>
+							<td>2x</td>
+						</tr>
+						<tr>
+							<td>Flask</td>
+							<td>3,600</td>
+							<td>0.278</td>
+							<td>1x</td>
+						</tr>
+						<tr>
+							<td>Pecan</td>
+							<td>3,049</td>
+							<td>0.328</td>
+							<td>1x</td>
+						</tr>
+						
+					</table>
+				</p>
 			</div>
 
 			<hr class="featurette-divider">
