@@ -211,9 +211,14 @@
 				<img class="featurette-image pull-right" src="">
 				<h2 class="featurette-heading">Benchmarks.</h2>
 				<p class="lead">
-					Scenario: API calls return a basic "Hello World" response.<br/>
-					Iterations: 100,000 rounds per test, results averaged over 3 trials.<br/>
-					Hardware: Mid 2010 Mac Pro (2.8 GHz Intel Xeon)
+					<strong>Scenario.</strong> Client acts as a WSGI server and performs a GET request directly on each framework's WSGI "app" callable. The endpoint returns a 10K plaintext response, and must set an x-header, as well as parse a route template with a single embedded parameter.
+				<p>
+				<p class="lead">
+					<strong>Iterations.</strong> 100,000 rounds per test, results averaged over 3 trials.
+				</p>
+				<p class="lead">
+					<strong>Hardware.</strong> Mid 2010 Mac Pro (2.8 GHz Intel Xeon)
+				</p>
 					<table class="benchmarks">
 						<tr>
 							<th>Framework</th>
