@@ -1,0 +1,156 @@
+body {
+  font-family: "Droid Sans";
+  background-color:#fefefe;
+}
+
+/* Carousel base class */
+.carousel
+{
+  margin-bottom:0px
+}
+
+.carousel .container
+{
+  position:relative;
+  z-index:9
+}
+
+.carousel-control
+{
+  height:80px;
+  margin-top:0;
+  font-size:120px;
+  text-shadow:0 1px 1px rgba(0,0,0,.4);
+  background-color:transparent;
+  border:0
+}
+
+.carousel .item
+{
+  height:500px
+}
+
+.carousel .cover
+{
+  position:absolute;
+  top:0;
+  left:0;
+  min-width:100%;
+  height:500px;
+  background-color:#3e3e3e;
+  background-image:url(../img/sky.jpg)
+}
+
+.carousel-caption
+{
+  background-color:transparent;
+  position:static;
+  max-width:550px;
+  padding:0 20px;
+  margin-top:200px
+}
+
+.carousel-caption h1,.carousel-caption .lead
+{
+  margin:0;
+  line-height:1.25;
+  color:#fefefe;
+  text-shadow:0 1px 1px rgba(0,0,0,0.7)
+}
+
+.carousel-caption h1
+{
+  font-family: "Amethysta";
+  font-size: 120px;
+}
+
+.carousel-caption .btn
+{
+  margin-top:10px
+}
+
+.background-strip
+{
+  position: absolute;
+  z-index: -1;
+  background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #ddd 100%);
+  height: 220px;
+  width: 100%;
+  padding:0;
+  margin:0;
+}
+
+#nav
+{
+  padding-top: 25px;
+}
+
+.featurette-divider
+{
+  margin-top:160px;
+  border:none;
+/* Space out the Bootstrap <hr> more */
+}
+
+.featurette
+{
+  /*padding-top:20px;*/
+/* Vertically center images part 1: add padding above and below text. */
+  overflow:hidden
+/* Vertically center images part 2: clear their floats. */
+}
+
+.featurette-image
+{
+  margin-top:-120px
+/* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left
+{
+  margin-right:40px
+}
+
+.featurette-image.pull-right
+{
+  margin-left:40px
+}
+
+/* Thin out the marketing headings */
+.featurette-heading
+{
+  font-size:50px;
+  font-weight:300;
+  /*font-family:"Amethysta";*/
+  line-height:1;
+  letter-spacing:-1px
+}
+
+.featurette h2
+{
+  padding-bottom: 8px;
+}
+
+table.benchmarks
+{
+  border-collapse:1;
+  border:1px solid #000
+}
+
+table.benchmarks tr td
+{
+  width:100px
+}
+
+table.benchmarks tr th,table.benchmarks tr td
+{
+  text-align:right;
+  border:1px solid #000;
+  padding:10px
+}
+
+table.benchmarks tr.highlight td
+{
+  background-color:#ccc
+}
