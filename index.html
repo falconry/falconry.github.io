@@ -4,13 +4,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Falcon is a really fast, light-weight framework for building cloud APIs. It tries to do as little as possible while remaining highly effective.">
-        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="css/fonts.css" rel="stylesheet" type="text/css">
-        <!-- <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Amethysta' rel='stylesheet' type='text/css'> -->
         <link href="css/styles.css" rel="stylesheet" type="text/css">
         <title>
-            Falcon - A high-performance python WSGI framework
+            Falcon - The high-performance python WSGI framework
         </title>
     </head>
     <body>
@@ -87,13 +85,13 @@
                     Design
                 </h2>
                 <p class="lead">
-                    <strong>Light.</strong> Only the essentials are included, with zero dependencies beyond the standard library. We work to keep the code lean-n-mean, making Falcon easier to test, optimize, and deploy.
+                    <strong>Light.</strong> Only the essentials are included, with six and testtools the only dependencies beyond the standard library. We work to keep the code lean, making Falcon easier to test, optimize, and deploy.
                 </p>
                 <p class="lead">
                     <strong>Fast.</strong> Cloud APIs need to turn around requests quickly, and make efficient use of hardware. Falcon processes requests several times faster than other popular web frameworks.
                 </p>
                 <p class="lead">
-                    <strong>Flexible.</strong> Falcon uses the web-friendly Python language and speaks WSGI. Built-in diagnostics facilitate monitoring and debugging of production systems.
+                    <strong>Flexible.</strong> Falcon can be deployed in a variety of ways, depending on your needs. The framework speaks WSGI, works great with Python 2.7, PyPy, and Python 3.3. There's no tight coupling with any async framework, leaving you free to mix-and match what you need.
                 </p>
             </div>
             <hr class="featurette-divider">
@@ -103,13 +101,13 @@
                     Benefits
                 </h2>
                 <p class="lead">
-                    <strong>Performance.</strong> Unlike other Python web frameworks, Falcon won't bottleneck your API's performance. Most frameworks max out at serving simple "hello world" requests at a few thousand req/sec, while Falcon can easily serve 10 times as many on the same hardware. Even Bottle, one of the fastest frameworks we tested, takes twice as long to serve requests compared to Falcon.
+                    <strong>Performance.</strong> Unlike other Python web frameworks, Falcon won't bottleneck your API's performance. Many frameworks max out at serving simple "hello world" requests at a few thousand req/sec, while Falcon can easily serve <strong>9-10 times</strong> as many on the same hardware. Even Bottle, one of the fastest frameworks we tested, takes twice as long to serve requests compared to Falcon.
                 </p>
                 <p class="lead">
-                    <strong>Freedom.</strong> Falcon isn't very opinionated. In other words, the framework leaves a lot of decisions and implementation details to you, the API developer, which means you will need to use your head a little more than other frameworks, and probably write a little more code. On the other hand, this gives you a lot of freedom to customize and tune your implementation in order to create a solution that stands out from the crowd.
+                    <strong>Freedom.</strong> Falcon isn't very opinionated. In other words, the framework leaves a lot of decisions and implementation details to you, the API developer, which means you will need to use your head a little more than other frameworks, and probably write a little more code. On the other hand, this gives you a lot of freedom to <strong>customize and tune</strong> your implementation in order to create a solution that stands out from the crowd.
                 </p>
                 <p class="lead">
-                    <strong>Reliability.</strong> Falcon doesn't include a lot of cruft that is simply unnecessary when building web services. Less code and fewer dependencies means a smaller attack surface, lower memory usage, and fewer places for bugs to hide.
+                    <strong>Reliability.</strong> Falcon doesn't include a lot of cruft that is simply unnecessary when building web services. Less code and fewer dependencies means a smaller attack surface, lower memory usage, and fewer places for bugs to hide. Our Jenkins build fails at anything less than <strong>100% code coverage</strong>.
                 </p>
                 <p class="lead">
                     If you're still not convinced, check out this <a href="http://www.thepartyanimal-blog.org/wp-content/uploads/2012/04/pancake_bunny.jpg" target="_blank" rel="nofollow">bunny</a> with a pancake on its head.
