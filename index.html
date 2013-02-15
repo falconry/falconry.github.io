@@ -128,7 +128,7 @@
                     <strong>Scenario.</strong> The benchmark acts as a WSGI server and performs a GET request directly on each framework's app. Each app parses a route template with a single embedded parameter, reads a query parameter and a header from the request data, sets an x-header on the response, and finally returns a 10 KiB plain-text body, randomly generated.
                 </p>
                 <p class="lead">
-                    <strong>Methodology.</strong> 50,000 iterations were run per trial, and the best time was taken for each framework over 5 trials. The order in which the frameworks were tested was randomized for each trial. Garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
+                    <strong>Methodology.</strong> 50,000 iterations were run per trial, and the best time was taken for each framework over 3 trials. The order in which the frameworks were tested was randomized for each trial. Garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
                 </p>
                 <p class="lead">
                     <strong>Platform.</strong> The benchmark was executed with Python 2.7.3, running under Mac OS X 10.8.2 on a mid-2010 MBP (2.66 GHz Intel Core i7).
@@ -156,10 +156,10 @@
                             Falcon
                         </td>
                         <td>
-                            33,432
+                            32,648
                         </td>
                         <td>
-                            30
+                            31
                         </td>
                         <td>
                             22x
@@ -170,7 +170,7 @@
                             Bottle
                         </td>
                         <td>
-                            16,138
+                            16,230
                         </td>
                         <td>
                             62
@@ -184,10 +184,10 @@
                             Werkzeug
                         </td>
                         <td>
-                            8,954
+                            8,718
                         </td>
                         <td>
-                            112
+                            115
                         </td>
                         <td>
                             6x
@@ -198,10 +198,10 @@
                             Flask
                         </td>
                         <td>
-                            4,322
+                            4,255
                         </td>
                         <td>
-                            231
+                            235
                         </td>
                         <td>
                             3x
@@ -212,10 +212,10 @@
                             Pecan
                         </td>
                         <td>
-                            3,728
+                            3,673
                         </td>
                         <td>
-                            268
+                            272
                         </td>
                         <td>
                             2x
@@ -226,10 +226,10 @@
                             CherryPy
                         </td>
                         <td>
-                            1,537
+                            1,494
                         </td>
                         <td>
-                            651
+                            669
                         </td>
                         <td>
                             1x
