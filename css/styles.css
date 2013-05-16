@@ -164,3 +164,38 @@ background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#FFF)
 background-image:-webkit-linear-gradient(top,#FFF 0%,#DCDDE2 100%);
 background-image:linear-gradient(to bottom,#FFF 0%,#DCDDE2 100%)
 }
+
+/* Thanks Daniel!
+
+http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms
+*/
+
+.forkme {
+  background-color: #a00;
+  overflow: hidden;
+  /* top left corner */
+  position: absolute;
+  z-index: 10;
+  left: -3em;
+  top: 2.5em;
+  /* 45 deg ccw rotation */
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  /* shadow */
+  box-shadow: 0 0 1em #888;
+  -moz-box-shadow: 0 0 1em #888;
+  -webkit-box-shadow: 0 0 1em #888;
+}
+.forkme a {
+  border: 1px solid #faa;
+  color: #fff;
+  display: block;
+  font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+  margin: 0.05em 0 0.075em 0;
+  padding: 0.5em 3.5em;
+  text-align: center;
+  text-decoration: none;
+  /* shadow */
+  text-shadow: 0 0 0.5em #444;
+}
