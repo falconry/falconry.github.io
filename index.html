@@ -71,7 +71,7 @@
                         Benchmarks
                     </h2>
                     <p>
-                        30x More Requests
+                        9x More Requests
                     </p>
                     <p>
                         <a class="btn" href="#Metrics">View details »</a>
@@ -106,7 +106,7 @@
                     Benefits
                 </h2>
                 <p class="lead">
-                    <strong>Performance.</strong> Unlike other Python web frameworks, Falcon won't bottleneck your API's performance under highly concurrent workloads. Even when requests are serialized, many frameworks max out at serving simple "hello world" requests at a few thousand req/sec, while Falcon can easily serve up to <strong>30 times</strong> as many on the same hardware. Even Bottle, one of the fastest web frameworks we tested, takes at least twice as long to serve requests compared to Falcon.
+                    <strong>Performance.</strong> Unlike other Python web frameworks, Falcon won't bottleneck your API's performance under highly concurrent workloads. Many frameworks max out at serving simple "hello world" requests at a few thousand req/sec, while Falcon can easily serve many more on the same hardware.
                 </p>
                 <p class="lead">
                     <strong>Freedom.</strong> Falcon isn't very opinionated. In other words, the framework leaves a lot of decisions and implementation details to you, the API developer, which means you will need to use your head a little more than other web frameworks, and probably write a little more code. On the other hand, this gives you a lot of freedom to <strong>customize and tune</strong> your implementation in order to create a solution that stands out from the crowd.
@@ -129,10 +129,10 @@
                     <strong>Scenario.</strong> The benchmark acts as a WSGI server and performs a GET request directly on each framework's app. Each app parses a route template with a single embedded parameter, reads a query parameter and a header from the request data, sets an x-header on the response, and finally returns a 10 KiB plain-text body, randomly generated.
                 </p>
                 <p class="lead">
-                    <strong>Methodology.</strong> 50,000 iterations were run per trial, and the best time was taken for each framework over 3 trials. The order in which the frameworks were tested was randomized for each trial. Garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
+                    <strong>Method.</strong> 200,000 iterations were executed per trial, and the best time was recorded for each framework over 5 trials. The order in which the frameworks were tested was randomized for each trial. Also, garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
                 </p>
                 <p class="lead">
-                    <strong>Platform.</strong> The benchmark was executed with Python 2.7.3, running under Mac OS X 10.8.2 on a mid-2010 MBP (2.66 GHz Intel Core i7).
+                    <strong>Platform.</strong> The benchmark was executed with Python 2.7.3, running under Mac OS X 10.8.3 on a Retina, 15-inch, early 2013 MBP (2.7 GHz Intel Core i7).
                 </p>
                 <p class="lead">
                     <strong>Results.</strong>
@@ -143,111 +143,98 @@
                             Framework
                         </th>
                         <th>
+                            Performance
+                        </th>
+                        <th>
                             req/sec
                         </th>
                         <th>
                             μs/req
                         </th>
-                        <th>
-                            Performance
-                        </th>
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon with Cython
+                            Falcon (0.1.5) with Cython (0.19)
                         </td>
                         <td>
-                            44,838
+                            9x
                         </td>
                         <td>
-                            22
+                            54,363
                         </td>
                         <td>
-                            30x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Falcon
-                        </td>
-                        <td>
-                            36,638
-                        </td>
-                        <td>
-                            27
-                        </td>
-                        <td>
-                            24x
+                            18
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Bottle
+                            Falcon (0.1.5)
                         </td>
                         <td>
-                            16,475
+                            7x
                         </td>
                         <td>
-                            61
+                            41,682
                         </td>
                         <td>
-                            11x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Werkzeug
-                        </td>
-                        <td>
-                            8,742
-                        </td>
-                        <td>
-                            114
-                        </td>
-                        <td>
-                            6x
+                            24
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Flask
+                            Bottle (0.11.6)
                         </td>
                         <td>
-                            4,309
+                            4x
                         </td>
                         <td>
-                            232
+                            22,242
                         </td>
                         <td>
-                            3x
+                            45
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Pecan
-                        </td>
-                        <td>
-                            3,773
-                        </td>
-                        <td>
-                            265
+                            Werkzeug (0.8.3)
                         </td>
                         <td>
                             2x
                         </td>
+                        <td>
+                            12,447
+                        </td>
+                        <td>
+                            80
+                        </td>
                     </tr>
+
                     <tr>
                         <td>
-                            CherryPy
-                        </td>
-                        <td>
-                            1,539
-                        </td>
-                        <td>
-                            650
+                            Pecan (0.3.0)
                         </td>
                         <td>
                             1x
+                        </td>
+                        <td>
+                            7,343
+                        </td>
+                        <td>
+                            136
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Flask (0.9)
+                        </td>
+                        <td>
+                            1x
+                        </td>
+                        <td>
+                            6,146
+                        </td>
+                        <td>
+                            163
                         </td>
                     </tr>
                 </table>
