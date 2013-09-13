@@ -135,10 +135,7 @@
                     <strong>Method.</strong> 200,000 iterations were executed per trial, and the best time was recorded for each framework over 5 trials. The order in which the frameworks were tested was randomized for each trial. Also, garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
                 </p>
                 <p class="lead">
-                    <strong>Platform.</strong> The benchmark was executed with Python 2.7.3, running under Mac OS X 10.8.3 on a Retina, 15-inch, early 2013 MBP (2.7 GHz Intel Core i7).
-                </p>
-                <p class="lead">
-                    <strong>Results.</strong>
+                    <strong>Platform.</strong> The benchmark was executed with Python 2.7.5, running under Mac OS X 10.8.3 on a Retina, 15-inch, early 2013 MBP (2.7 GHz Intel Core i7).
                 </p>
                 <table class="benchmarks">
                     <tr>
@@ -146,7 +143,115 @@
                             Framework
                         </th>
                         <th>
+                            req/sec
+                        </th>
+                        <th>
+                            μs/req
+                        </th>
+                        <th>
                             Performance
+                        </th>
+                    </tr>
+                    <tr class="highlight">
+                        <td>
+                            Falcon (0.1.7) with Cython (0.19.1)
+                        </td>
+                        <td>
+                            52,858
+                        </td>
+                        <td>
+                            19
+                        </td>
+                        <td>
+                            11x
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Falcon (0.1.7)
+                        </td>
+                        <td>
+                            39,860
+                        </td>
+                        <td>
+                            25
+                        </td>
+                        <td>
+                            8x
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Bottle (0.11.6)
+                        </td>
+                        <td>
+                            21,649
+                        </td>
+                        <td>
+                            46
+                        </td>
+                        <td>
+                            4x
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Werkzeug (0.9.4)
+                        </td>
+                        <td>
+                            8,382
+                        </td>
+                        <td>
+                            119
+                        </td>
+                        <td>
+                            1.7x
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Pecan (0.3.2)
+                        </td>
+                        <td>
+                            7,111
+                        </td>
+                        <td>
+                            141
+                        </td>
+                        <td>
+                            1.5x
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Flask (0.10.1)
+                        </td>
+                        <td>
+                            4,897
+                        </td>
+                        <td>
+                            204
+                        </td>
+                        <td>
+                            1x
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="lead">
+                    <strong>Extended Test.</strong> Falcon has also been benchmarked
+                    with a more realistic scenario where the routing table has
+                    multiple entries, and several complex response headers are
+                    being set in the response. Even when Falcon is doing more
+                    work, it still is able to outperform other frameworks such
+                    as Bottle which are only doing the bare minimum to construct
+                    a response (shown below for comparison).
+                </p>
+                <table class="benchmarks">
+                    <tr>
+                        <th>
+                            Framework
                         </th>
                         <th>
                             req/sec
@@ -155,32 +260,26 @@
                             μs/req
                         </th>
                     </tr>
-                    <tr class="highlight">
+                    <tr>
                         <td>
-                            Falcon (0.1.5) with Cython (0.19)
+                            Falcon (0.1.7) with Cython (0.19.1)
                         </td>
                         <td>
-                            9x
+                            43,490
                         </td>
                         <td>
-                            54,363
-                        </td>
-                        <td>
-                            18
+                            23
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Falcon (0.1.5)
+                            Falcon (0.1.7)
                         </td>
                         <td>
-                            7x
+                            33,298
                         </td>
                         <td>
-                            41,682
-                        </td>
-                        <td>
-                            24
+                            30
                         </td>
                     </tr>
                     <tr>
@@ -188,56 +287,10 @@
                             Bottle (0.11.6)
                         </td>
                         <td>
-                            4x
-                        </td>
-                        <td>
-                            22,242
+                            22,114
                         </td>
                         <td>
                             45
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Werkzeug (0.8.3)
-                        </td>
-                        <td>
-                            2x
-                        </td>
-                        <td>
-                            12,447
-                        </td>
-                        <td>
-                            80
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            Pecan (0.3.0)
-                        </td>
-                        <td>
-                            1x
-                        </td>
-                        <td>
-                            7,343
-                        </td>
-                        <td>
-                            136
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Flask (0.9)
-                        </td>
-                        <td>
-                            1x
-                        </td>
-                        <td>
-                            6,146
-                        </td>
-                        <td>
-                            163
                         </td>
                     </tr>
                 </table>
