@@ -7,11 +7,25 @@
         <meta name="description" content="Falcon is a really fast, light-weight framework for building cloud APIs. It tries to do as little as possible while remaining highly effective.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Bold|Amethysta' rel='stylesheet'>
+
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
         <title>
             Falcon - The high-performance python WSGI framework
         </title>
+
+        <script>
+
+            function lifetime() {
+                epoch = Date.UTC(2013, 1, 5);
+                delta_ms = Date.now() - epoch;
+
+                return (delta_ms / 1000 / 31556952).toFixed(2)
+            }
+
+        </script>
     </head>
     <body>
         <div class="forkme">
@@ -31,7 +45,7 @@
                                 Falcon
                             </h1>
                             <p class="lead">
-                                The high-performance cloud API framework.
+                                Unburdening cloud apps for over <script>document.write(lifetime())</script> x 10<sup>-2</sup> centuries.
                             </p>
                         </div>
                     </div>
@@ -50,10 +64,10 @@
                         Design
                     </h2>
                     <p>
-                        Light, Fast, and Flexible
+                        Light, fast, and flexible
                     </p>
                     <p>
-                        <a class="btn" href="#Features">View details »</a>
+                        <a class="btn" href="#Features">Check it out »</a>
                     </p>
                 </div><!-- /.span4 -->
                 <div class="span4">
@@ -62,10 +76,10 @@
                         Benefits
                     </h2>
                     <p>
-                        Performance, Freedom and Reliability
+                        Performance, freedom and reliability
                     </p>
                     <p>
-                        <a class="btn" href="#Benefits">View details »</a>
+                        <a class="btn" href="#Benefits">Check it out »</a>
                     </p>
                 </div><!-- /.span4 -->
                 <div class="span4">
@@ -74,21 +88,21 @@
                         Benchmarks
                     </h2>
                     <p>
-                        Same Hardware, More Cowbell
+                        More requests, same hardware
                     </p>
                     <p>
-                        <a class="btn" href="#Metrics">View details »</a>
+                        <a class="btn" href="#Metrics">Check it out »</a>
                     </p>
                 </div><!-- /.span4 -->
             </div><!-- /.row -->
         </div><!-- START THE FEATURETTES -->
-        <div class="container marketing">
-            <hr class="featurette-divider">
+        <div id="primary-container" class="container marketing">
             <div class="featurette">
                 <a id="Features"></a> <img class="featurette-image pull-right" src="">
                 <h2 class="featurette-heading">
                     Design
                 </h2>
+                <img alt="Falcon is a *truly* fast, light Python WSGI framework." src="img/flight-silhouettes.gif" width="50%" class="pull-right">
                 <p class="lead">
                     <strong>Light.</strong> Only the essentials are included, with <em>six</em> and <em>mimeparse</em> the only dependencies beyond the standard library. We work to keep the code lean, making Falcon easier to test, optimize, and deploy.
                 </p>
