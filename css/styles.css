@@ -1,23 +1,6 @@
-@font-face {
-font-family:'Amethysta';
-font-style:normal;
-font-weight:400;
-}
-
-@font-face {
-font-family:'Droid Sans';
-font-style:normal;
-font-weight:400;
-}
-
-@font-face {
-font-family:'Droid Sans';
-font-style:normal;
-font-weight:700;
-}
-
 body {
-font-family:"Droid Sans";
+/*font-family:"Droid Sans";*/
+font-family:"Josefin Sans";
 background-color:#fefefe
 }
 
@@ -114,6 +97,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5ede2', end
 padding-top:25px
 }
 
+#nav p {
+  font-family: "Raleway"
+}
+
 .featurette-divider {
 margin-top:40px;
 border:none
@@ -137,7 +124,6 @@ margin-left:40px
 
 .featurette-heading {
 font-size:50px;
-font-weight:300;
 line-height:1;
 letter-spacing:-1px
 }

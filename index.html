@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Bold|Amethysta' rel='stylesheet'>
+        <link href='http://fonts.googleapis.com/css?family=Amethysta:400|Josefin+Sans:400,600,700|Raleway' rel='stylesheet'>
 
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -19,10 +19,12 @@
         <script>
 
             function lifetime() {
-                epoch = Date.UTC(2013, 1, 5);
-                delta_ms = Date.now() - epoch;
+                FALCON_EPOCH = 1357365600;
+                SECONDS_PER_ORBITAL_ROTATION = 31558149.504000004;
 
-                return (delta_ms / 1000 / 31556952).toFixed(2)
+                delta_sec = (Date.now() / 1000) - FALCON_EPOCH;
+
+                return (delta_sec / SECONDS_PER_ORBITAL_ROTATION).toFixed(2)
             }
 
         </script>
