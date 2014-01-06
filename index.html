@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-        <link href='http://fonts.googleapis.com/css?family=Amethysta:400|Josefin+Sans:400,600,700|Raleway' rel='stylesheet'>
+        <link href='http://fonts.googleapis.com/css?family=Amethysta:400|Josefin+Sans:400,600,700|Raleway:400,700' rel='stylesheet'>
 
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -153,10 +153,10 @@
                     <strong>Scenario.</strong> The benchmark acts as a WSGI server and performs a GET request directly on each framework's app. Each app parses a route template with a single embedded parameter, reads a query parameter and a header from the request data, sets an x-header on the response, and finally returns a 10 KiB plain-text body, randomly generated.
                 </p>
                 <p class="lead">
-                    <strong>Method.</strong> 200,000 iterations were executed per trial, and the best time was recorded for each framework over 5 trials. The order in which the frameworks were tested was randomized for each trial. Also, garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
+                    <strong>Method.</strong> 100,000 iterations were executed per trial, and the best time was recorded for each framework over 5 trials. The order in which the frameworks were tested was randomized for each trial. Also, garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
                 </p>
                 <p class="lead">
-                    <strong>Platform.</strong> The benchmark was executed with Python 2.7.5, running under Mac OS X 10.8.3 on a Retina, 15-inch, early 2013 MBP (2.7 GHz Intel Core i7).
+                    <strong>Platform.</strong> The benchmark was executed with Python 2.7.6, running under Mac OS X 10.8.3 on a Retina, 15-inch, early 2013 MBP (2.7 GHz Intel Core i7).
                 </p>
                 <table class="benchmarks">
                     <tr>
@@ -175,27 +175,27 @@
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon (0.1.7) with Cython (0.19.1)
+                            Falcon (0.1.8) with Cython (0.19.2)
                         </td>
                         <td>
-                            52,858
+                            43,080
                         </td>
                         <td>
-                            19
+                            23
                         </td>
                         <td>
-                            11x
+                            10x
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Falcon (0.1.7)
+                            Falcon (0.1.8)
                         </td>
                         <td>
-                            39,860
+                            37,598
                         </td>
                         <td>
-                            25
+                            27
                         </td>
                         <td>
                             8x
@@ -206,13 +206,27 @@
                             Bottle (0.11.6)
                         </td>
                         <td>
-                            21,649
+                            22,388
                         </td>
                         <td>
-                            46
+                            45
                         </td>
                         <td>
-                            4x
+                            5x
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Pecan (0.4.3)
+                        </td>
+                        <td>
+                            9,732
+                        </td>
+                        <td>
+                            103
+                        </td>
+                        <td>
+                            2x
                         </td>
                     </tr>
                     <tr>
@@ -220,39 +234,25 @@
                             Werkzeug (0.9.4)
                         </td>
                         <td>
-                            8,382
+                            7,450
                         </td>
                         <td>
-                            119
+                            134
                         </td>
                         <td>
-                            1.7x
+                            2x
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            Pecan (0.3.2)
-                        </td>
-                        <td>
-                            7,111
-                        </td>
-                        <td>
-                            141
-                        </td>
-                        <td>
-                            1.5x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                             Flask (0.10.1)
                         </td>
                         <td>
-                            4,897
+                            4,520
                         </td>
                         <td>
-                            204
+                            221
                         </td>
                         <td>
                             1x
@@ -283,24 +283,24 @@
                     </tr>
                     <tr>
                         <td>
-                            Falcon (0.1.7) with Cython (0.19.1)
+                            Falcon (0.1.8) with Cython (0.19.2)
                         </td>
                         <td>
-                            43,490
+                            36,349
                         </td>
                         <td>
-                            23
+                            28
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Falcon (0.1.7)
+                            Falcon (0.1.8)
                         </td>
                         <td>
-                            33,298
+                            31,406
                         </td>
                         <td>
-                            30
+                            32
                         </td>
                     </tr>
                     <tr>
@@ -308,7 +308,7 @@
                             Bottle (0.11.6)
                         </td>
                         <td>
-                            22,114
+                            22,388
                         </td>
                         <td>
                             45

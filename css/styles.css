@@ -136,6 +136,7 @@ table.benchmarks {
 border-collapse:1;
 border:1px solid #000;
 margin-bottom: 2.5em;
+font-family: "Raleway";
 }
 
 table.benchmarks tr td {
@@ -158,6 +159,7 @@ background-color:#eee5c7
 }
 
 table.benchmarks th {
+font-weight: bold;
 background-color:#DCDDE2;
 background-image:-ms-linear-gradient(top,#FFF 0%,#DCDDE2 100%);
 background-image:-moz-linear-gradient(top,#FFF 0%,#DCDDE2 100%);
