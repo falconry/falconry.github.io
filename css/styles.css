@@ -1,7 +1,7 @@
 body {
 /*font-family:"Droid Sans";*/
 font-family:"Josefin Sans";
-background-color:#fefefe
+background-color:#fefefe;
 }
 
 img.pull-right {
@@ -123,7 +123,7 @@ margin-left:40px
 }
 
 .featurette-heading {
-font-size:50px;
+font-size: bigger;
 line-height:1;
 letter-spacing:-1px
 }
@@ -174,7 +174,7 @@ background-image:linear-gradient(to bottom,#FFF 0%,#DCDDE2 100%)
 http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms
 */
 
-.forkme {
+#forkme {
   background-color: #a00;
   overflow: hidden;
   /* top left corner */
@@ -191,7 +191,7 @@ http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms
   -moz-box-shadow: 0 0 1em #888;
   -webkit-box-shadow: 0 0 1em #888;
 }
-.forkme a {
+#forkme a {
   border: 1px solid #faa;
   color: #fff;
   display: block;
@@ -202,4 +202,17 @@ http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms
   text-decoration: none;
   /* shadow */
   text-shadow: 0 0 0.5em #444;
+}
+
+#falcon-version {
+  font: bold 90% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+  position: absolute;
+  z-index: 10;
+  margin: 10px 14px;
+  right: -1px;
+  top: 5px;
+  color: black;
+}
+
+#falcon-version a {
 }
