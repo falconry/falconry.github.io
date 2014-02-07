@@ -204,6 +204,23 @@ http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms
   text-shadow: 0 0 0.5em #444;
 }
 
+#buzz {
+  position: absolute;
+  font-size: 20px;
+  width: 350px;
+  z-index: 10;
+  left: 600px;
+  bottom: 3px;
+  color: black;
+  text-shadow:1px 2px 2px #eee;
+}
+
+#buzz span {
+  float: right;
+  margin-right: 3em;
+  text-shadow:1px 2px 2px #fff;
+}
+
 #falcon-version {
   font: bold 90% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
   position: absolute;
