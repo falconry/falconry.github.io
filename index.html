@@ -166,7 +166,7 @@
                     <strong>Method.</strong> 200,000 iterations were executed per trial, and the best time was recorded for each framework over 20 trials. The order in which the frameworks were tested was randomized for each trial. Also, garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
                 </p>
                 <p class="lead">
-                    <strong>Platform.</strong> Benchmarks were executed on a Rackspace Cloud Server (1 GB Performance), running Arch 2013.9 with all system packages updated to their latest versions as of 16 Jan 2014.
+                    <strong>Platform.</strong> Benchmarks were executed on a Rackspace Cloud Server (1 GB Performance), running Arch 2013.9 with all system packages updated to their latest versions as of 16 Jan 2014. The frameworks were tested on several different versions of Python. Note that in these tests the Falcon modules were not cythonized; generally speaking, the reader may expect a ~10% boost in performance when Falcon is installed with Cython.
                 </p>
 
                 <p class="lead">Python 2.7.6</p>
