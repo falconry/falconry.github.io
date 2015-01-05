@@ -17,8 +17,17 @@ position:relative;
 z-index:9
 }
 
+#code-container {
+  margin-top: 80px;
+}
+
 #primary-container {
-  margin-top: 110px;
+  margin-top: 40px;
+}
+
+#code-container p {
+  font-size: 1.2rem;
+  line-height: 1.4;
 }
 
 .carousel-control {
@@ -78,7 +87,7 @@ margin-top:10px
 .background-strip {
 position:absolute;
 z-index:-1;
-height:220px;
+height:180px;
 width:100%;
 padding:0;
 margin:0;
