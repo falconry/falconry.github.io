@@ -117,16 +117,14 @@
                 transitions, which map to HTTP verbs.
               </p>
               <p>
-                The <code>falcon.API</code> class instances are <em>WSGI</em>
-                applications and can be run with any <em>WSGI</em> server.
-                For example, running on <a href="http://gunicorn.org">Gunicorn</a> would be:
+                The <code>falcon.API</code> class instances are WSGI
+                applications and can be run with any WSGI server.
+                For example, using <a href="http://gunicorn.org">Gunicorn</a>:
               </p>
-              <pre>
-                $ gunicorn things:app
-              </pre>
+              <pre>$ gunicorn things:app</pre>
               <p>
                 You can find more information in the project's <a href="https://github.com/racker/falcon">GitHub repo</a>
-                or in the <a href="http://falcon.readthedocs.org/en/latest/">Official Documentation</a>.
+                or in the <a href="http://falcon.readthedocs.org/en/latest/">official documentation</a>.
               </p>
             </div>
             <div class="span6 pull-right">
@@ -145,8 +143,7 @@ class ThingsResource:
 
 app = falcon.API()
 things = ThingsResource()
-app.add_route('/things', things)
-          </pre>
+app.add_route('/things', things)</pre>
             </div>
           </div>
         </div>
