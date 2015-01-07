@@ -108,6 +108,45 @@
                 </div><!-- /.span4 -->
             </div><!-- /.row -->
         </div><!-- START THE FEATURETTES -->
+        <div id="code-container" class="container">
+          <div class="row">
+            <div class="span5">
+              <p>
+                Falcon follows the REST architectural style, meaning (among
+                other things) that you think in terms of resources and state
+                transitions, which map to HTTP verbs.
+              </p>
+              <p>
+                The <code>falcon.API</code> class instances are WSGI
+                applications and can be run with any WSGI server.
+                For example, using <a href="http://gunicorn.org">Gunicorn</a>:
+              </p>
+              <pre>$ gunicorn things:app</pre>
+              <p>
+                You can find more information in the project's <a href="https://github.com/racker/falcon">GitHub repo</a>
+                or in the <a href="http://falcon.readthedocs.org/en/latest/">official documentation</a>.
+              </p>
+            </div>
+            <div class="span6 pull-right">
+              <pre>
+# things.py
+import falcon
+
+
+class ThingsResource:
+    def on_get(self, req, resp):
+        """Handles GET requests"""
+        resp.body = ('\nI've always been more interested in\n
+                     'the future than in the past.\n'
+                     '\n'
+                     '    ~ Grace Hopper\n\n')
+
+app = falcon.API()
+things = ThingsResource()
+app.add_route('/things', things)</pre>
+            </div>
+          </div>
+        </div>
         <div id="primary-container" class="container marketing">
             <div class="featurette">
                 <a id="Features"></a> <img class="featurette-image pull-right" src="">
