@@ -161,7 +161,7 @@ app.add_route('/things', things)</pre>
                     <strong>Fast.</strong> Cloud APIs need to turn around requests quickly, and make efficient use of hardware. Falcon processes requests several times faster than other popular web frameworks.
                 </p>
                 <p class="lead">
-                    <strong>Flexible.</strong> Falcon can be deployed in a variety of ways, depending on your needs. The framework speaks WSGI, and works great with Python 2.6 and 2.7, PyPy, and Python 3.3/3.4. There's no tight coupling with any async framework, leaving you free to mix-and-match what you need for your web service.
+                    <strong>Flexible.</strong> Falcon can be deployed in a variety of ways, depending on your needs. The framework speaks WSGI, and works great with CPython 2.6 and 2.7, PyPy, and CPython 3.3/3.4. There's no tight coupling with any async framework, leaving you free to mix-and-match what you need for your web service.
                 </p>
                 <p class="lead">
                     Try the <a href="https://github.com/racker/falcon/blob/master/README.md#install" alt='falcon web framework install' target="_">Falcon Web Framework</a> and then check out these <a alt="Falcon web framework hooks library" href="https://github.com/talons/talons" target="_">Talons</a>.
@@ -205,10 +205,10 @@ app.add_route('/things', things)</pre>
                     <strong>Method.</strong> 200,000 iterations were executed per trial, and the best time was recorded for each framework over 20 trials. The order in which the frameworks were tested was randomized for each trial. Also, garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
                 </p>
                 <p class="lead">
-                    <strong>Platform.</strong> Benchmarks were executed on a Rackspace Cloud Server (1 GB Performance), running Arch 2013.9 with all system packages updated to their latest versions as of 16 Jan 2014. The frameworks were tested on several different versions of Python. Note that in these tests the Falcon modules were not cythonized; generally speaking, the reader may expect a ~10% boost in performance when Falcon is installed with Cython.
+                    <strong>Platform.</strong> Benchmarks were executed on a Rackspace Cloud Server (1 GB Performance), running Arch 2014.8 (PVHVM) with all system packages updated to their latest versions as of 18 Feb 2015. The frameworks were tested on several different versions of Python. Note that in these tests the Falcon modules were not cythonized; generally speaking, the reader may expect a ~10% boost in performance when Falcon is installed with Cython.
                 </p>
 
-                <p class="lead">Python 2.7.6</p>
+                <p class="lead">CPython 2.7.9</p>
 
                 <table class="benchmarks">
                     <tr>
@@ -227,13 +227,13 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon (0.1.8)
+                            Falcon (0.2.0)
                         </td>
                         <td>
-                            24,358
+                            25,189
                         </td>
                         <td>
-                            41
+                            40
                         </td>
                         <td>
                             8x
@@ -241,10 +241,10 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr>
                         <td>
-                            Bottle (0.11.6)
+                            Bottle (0.12.8)
                         </td>
                         <td>
-                            13,623
+                            13,748
                         </td>
                         <td>
                             73
@@ -255,24 +255,10 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr>
                         <td>
-                            Pecan (0.4.4)
+                            Werkzeug (0.10.1)
                         </td>
                         <td>
-                            6,604
-                        </td>
-                        <td>
-                            151
-                        </td>
-                        <td>
-                            2x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Werkzeug (0.9.4)
-                        </td>
-                        <td>
-                            5,163
+                            5,148
                         </td>
                         <td>
                             194
@@ -281,24 +267,38 @@ app.add_route('/things', things)</pre>
                             2x
                         </td>
                     </tr>
-
                     <tr>
                         <td>
-                            Flask (0.10.1)
+                            Pecan (0.8.3)
                         </td>
                         <td>
-                            3,041
+                            3,727
                         </td>
                         <td>
-                            329
+                            268
                         </td>
                         <td>
                             1x
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            Flask (0.10.1)
+                        </td>
+                        <td>
+                            3,165
+                        </td>
+                        <td>
+                            316
+                        </td>
+                        <td>
+                            1x
+                        </td>
+                    </tr>
+
                 </table>
 
-                <p class="lead">Python 3.3.3</p>
+                <p class="lead">CPython 3.4.2</p>
 
                 <table class="benchmarks">
                     <tr>
@@ -317,13 +317,13 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon (0.1.8)
+                            Falcon (0.2.0)
                         </td>
                         <td>
-                            18,857
+                            21,707
                         </td>
                         <td>
-                            53
+                            46
                         </td>
                         <td>
                             7x
@@ -331,13 +331,13 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr>
                         <td>
-                            Bottle (0.11.6)
+                            Bottle (0.12.8)
                         </td>
                         <td>
-                            10,788
+                            12,049
                         </td>
                         <td>
-                            93
+                            83
                         </td>
                         <td>
                             4x
@@ -345,27 +345,13 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr>
                         <td>
-                            Werkzeug (0.9.4)
+                            Werkzeug (0.10.1)
                         </td>
                         <td>
-                            4,704
+                            5,686
                         </td>
                         <td>
-                            213
-                        </td>
-                        <td>
-                            2x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Pecan (0.4.4)
-                        </td>
-                        <td>
-                            4,631
-                        </td>
-                        <td>
-                            216
+                            176
                         </td>
                         <td>
                             2x
@@ -376,10 +362,24 @@ app.add_route('/things', things)</pre>
                             Flask (0.10.1)
                         </td>
                         <td>
-                            2,842
+                            3,298
                         </td>
                         <td>
-                            352
+                            303
+                        </td>
+                        <td>
+                            1x
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Pecan (0.8.3)
+                        </td>
+                        <td>
+                            3,086
+                        </td>
+                        <td>
+                            324
                         </td>
                         <td>
                             1x
@@ -387,7 +387,7 @@ app.add_route('/things', things)</pre>
                     </tr>
                 </table>
 
-                <p class="lead">PyPy 2.2.1</p>
+                <p class="lead">PyPy 2.5.0</p>
 
                 <table class="benchmarks">
                     <tr>
@@ -406,58 +406,58 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon (0.1.8)
+                            Falcon (0.2.0)
                         </td>
                         <td>
-                            120,703
+                            174,059
                         </td>
                         <td>
-                            8
+                            6
                         </td>
                         <td>
-                            13x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Bottle (0.11.6)
-                        </td>
-                        <td>
-                            105,933
-                        </td>
-                        <td>
-                            9
-                        </td>
-                        <td>
-                            11x
+                            18x
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Pecan (0.4.4)
+                            Bottle (0.12.8)
                         </td>
                         <td>
-                            73,793
+                            137,549
                         </td>
                         <td>
-                            14
+                            7
                         </td>
                         <td>
-                            8x
+                            14x
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Werkzeug (0.9.4)
+                            Werkzeug (0.10.1)
                         </td>
                         <td>
-                            40,841
+                            45,101
                         </td>
                         <td>
-                            24
+                            22
                         </td>
                         <td>
-                            4x
+                            5x
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Pecan (0.8.3)
+                        </td>
+                        <td>
+                            16,286
+                        </td>
+                        <td>
+                            61
+                        </td>
+                        <td>
+                            2x
                         </td>
                     </tr>
                     <tr>
@@ -465,10 +465,10 @@ app.add_route('/things', things)</pre>
                             Flask (0.10.1)
                         </td>
                         <td>
-                            9,391
+                            9,819
                         </td>
                         <td>
-                            106
+                            102
                         </td>
                         <td>
                             1x
@@ -478,7 +478,7 @@ app.add_route('/things', things)</pre>
                 <p>&nbsp;</p>
                 <p class="lead">
                     <strong>Extended Test.</strong> Falcon was also benchmarked
-                    under Python 2.7.6 with a more realistic scenario, in which the routing table had
+                    under CPython 2.7.9 with a more realistic scenario, in which the routing table had
                     multiple entries, the query string contained percent-encoded characters, and several
                     complex response headers were set in the response. Note that even when Falcon is doing
                     more work, it still is able to outperform other frameworks, such
@@ -505,30 +505,30 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon (0.1.8)
+                            Falcon (0.2.0)
                         </td>
                         <td>
                             Extended
                         </td>
                         <td>
-                            17,787
+                            16,527
                         </td>
                         <td>
-                            56
+                            61
                         </td>
                         <td>
-                            6x
+                            5x
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Bottle (0.11.6)
+                            Bottle (0.12.8)
                         </td>
                         <td>
                             Simple
                         </td>
                         <td>
-                            13,623
+                            13,748
                         </td>
                         <td>
                             73
@@ -539,19 +539,19 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr>
                         <td>
-                            Pecan (0.4.4)
+                            Flask (0.10.1)
                         </td>
                         <td>
                             Simple
                         </td>
                         <td>
-                            6,604
+                            3,165
                         </td>
                         <td>
-                            151
+                            316
                         </td>
                         <td>
-                            2x
+                            1x
                         </td>
                     </tr>
                 </table>
