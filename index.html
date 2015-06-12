@@ -32,7 +32,7 @@
             function setVersion(package) {
                 var version = package.info.version;
                 var element = document.getElementById('falcon-version').firstElementChild
-                element.innerHTML = 'v' + version;
+                element.innerHTML = version;
             }
 
             function lifetime() {
@@ -53,7 +53,7 @@
         <div id="rtd">
           <a href="http://falcon.readthedocs.org" rel="me" target="_blank">Read the Docs</a>
         </div>
-        <p id="falcon-version"><a href="https://pypi.python.org/pypi/falcon"></a></p>
+        <p id="falcon-version">Latest: <a href="https://pypi.python.org/pypi/falcon"></a></p>
         <!-- Carousel ================================================== -->
         <div id="myCarousel" class="carousel slide">
             <!-- Carousel items -->
@@ -70,7 +70,6 @@
                             <p class="lead">
                                 Unburdening cloud apps for over <script>document.write(lifetime())</script> x 10<sup>-2</sup> centuries.
                             </p>
-                            <p id="buzz"><em>I feel like I'm just talking HTTP at last, with nothing in the middle. Falcon seems like the</em> requests <em>of backend.</em><br/><br/><span>S. Magrí</span></p>
                         </div>
                     </div>
                 </div>
@@ -124,41 +123,30 @@
           <div class="row">
             <div class="span5">
               <p>
-                Falcon is a <em>very</em> fast, minimalist Python framework for building cloud APIs and app backends.
+                Falcon is a <em>ridiculously fast</em>, minimalist Python web framework for building cloud APIs and app backends.
               </p>
               <p>
-                Falcon encourages the REST architectural style, meaning (among
+                The Falcon web framework encourages the REST architectural style, meaning (among
                 other things) that you think in terms of resources and state
                 transitions, which map to HTTP verbs.
               </p>
+             
               <p>
-                The <code>falcon.API</code> class instances are WSGI
-                applications and can be run with any WSGI server.
-                For example, using <a href="http://gunicorn.org">Gunicorn</a>:
+                You can find more information in the <a href="https://github.com/racker/falcon">GitHub repo</a>
+                or in the <a href="http://falcon.readthedocs.org/en/latest/">official documentation</a>. We also have a <a href="http://falcon.readthedocs.org/en/latest/community/help.html">mailing list and IRC channel</a> where you can ask questions and discuss ideas with the community.
               </p>
-              <pre>$ gunicorn things:app</pre>
-              <p>
-                You can find more information in the project's <a href="https://github.com/racker/falcon">GitHub repo</a>
-                or in the <a href="http://falcon.readthedocs.org/en/latest/">official documentation</a>.
+              <p class="pss">
+                Falcon is an Apache-licensed <a href="https://www.rackspace.com/">Rackspace</a> community project, built and maintained by a group of stylish volunteers from around the world.
               </p>
             </div>
             <div class="span6 pull-right">
-              <pre>
-# things.py
-import falcon
-
-
-class ThingsResource:
-    def on_get(self, req, resp):
-        """Handles GET requests"""
-        resp.body = ("\nI've always been more interested in\n"
-                     'the future than in the past.\n'
-                     '\n'
-                     '    ~ Grace Hopper\n\n')
-
-app = falcon.API()
-things = ThingsResource()
-app.add_route('/things', things)</pre>
+              <p>
+                Instances of <code>falcon.API</code> are WSGI
+                applications and can run on any WSGI server, such as
+                <a href="http://gunicorn.org">Gunicorn</a>:
+              </p>
+               <p><pre>$ gunicorn sample:api</pre></p>
+                <script src="https://gist.github.com/kgriffs/90837585fa4aca475229.js"></script>
             </div>
           </div>
         </div>
@@ -179,12 +167,8 @@ app.add_route('/things', things)</pre>
                     <strong>Flexible.</strong> Falcon can be deployed in a variety of ways, depending on your needs. The framework speaks WSGI, and works great with CPython 2.6 and 2.7, PyPy, and CPython 3.3/3.4. There's no tight coupling with any async framework, leaving you free to mix-and-match what you need for your web service.
                 </p>
                 <p class="lead">
-                    Try the <a href="https://github.com/racker/falcon/blob/master/README.md#install" alt='falcon web framework install' target="_">Falcon Web Framework</a> and then check out these <a alt="Falcon web framework hooks library" href="https://github.com/talons/talons" target="_">Talons</a>.
+                    Try the <a href="https://github.com/racker/falcon/blob/master/README.md#install" alt='falcon web framework install' target="_">Falcon Web Framework</a>.
                 </p>
-                <p class="lead">
-
-                </p>
-
 
             </div>
             <hr class="featurette-divider">
@@ -203,7 +187,7 @@ app.add_route('/things', things)</pre>
                     <strong>Reliability.</strong> Falcon doesn't include a lot of cruft that is simply unnecessary when building web services. Less code and fewer dependencies means a smaller attack surface, lower memory usage, and fewer places for bugs to hide. Our build fails at anything less than <strong>100% code coverage</strong>. We use <a href="https://travis-ci.org/racker/falcon" target="_blank">Travis</a> and <a href="https://coveralls.io/r/racker/falcon" target="_blank">Coveralls</a> to keep ourselves honest.
                 </p>
                 <p class="lead">
-                    If you're still not convinced, check out this <a href="http://www.thepartyanimal-blog.org/wp-content/uploads/2012/04/pancake_bunny.jpg" target="_blank" rel="nofollow">bunny</a> with a pancake on its head.
+                    If you're still not convinced, check out this <a href="img/pancake_bunny.jpg" target="_blank" rel="nofollow">bunny</a> with a pancake on its head.
                 </p>
                 <p class="lead"></p>
             </div>
@@ -220,7 +204,7 @@ app.add_route('/things', things)</pre>
                     <strong>Method.</strong> 200,000 iterations were executed per trial, and the best time was recorded for each framework over 20 trials. The order in which the frameworks were tested was randomized for each trial. Also, garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
                 </p>
                 <p class="lead">
-                    <strong>Platform.</strong> Benchmarks were executed on a Rackspace Cloud Server (1 GB Performance), running Arch 2014.8 (PVHVM) with all system packages updated to their latest versions as of 18 Feb 2015. The frameworks were tested on several different versions of Python. Note that in these tests the Falcon modules were not cythonized; generally speaking, the reader may expect a ~10% boost in performance when Falcon is installed with Cython.
+                    <strong>Platform.</strong> Benchmarks were executed on a Rackspace Cloud Server (1 GB Performance), running Arch 2014.8 (PVHVM) with all system packages updated to their latest versions as of May 2015. The frameworks were tested on several different versions of Python. Note that in these tests the Falcon modules were not cythonized; generally speaking, the reader may expect a ~10% boost in performance when Falcon is installed with Cython.
                 </p>
 
                 <p class="lead">CPython 2.7.9</p>
@@ -242,13 +226,13 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon (0.2.0)
+                            Falcon (0.3.0)
                         </td>
                         <td>
-                            25,189
+                            21,858
                         </td>
                         <td>
-                            40
+                            46
                         </td>
                         <td>
                             8x
@@ -259,10 +243,10 @@ app.add_route('/things', things)</pre>
                             Bottle (0.12.8)
                         </td>
                         <td>
-                            13,748
+                            12,583
                         </td>
                         <td>
-                            73
+                            79
                         </td>
                         <td>
                             4x
@@ -270,13 +254,13 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr>
                         <td>
-                            Werkzeug (0.10.1)
+                            Werkzeug (0.10.4)
                         </td>
                         <td>
-                            5,148
+                            4,708
                         </td>
                         <td>
-                            194
+                            212
                         </td>
                         <td>
                             2x
@@ -287,10 +271,10 @@ app.add_route('/things', things)</pre>
                             Pecan (0.8.3)
                         </td>
                         <td>
-                            3,727
+                            3,442
                         </td>
                         <td>
-                            268
+                            291
                         </td>
                         <td>
                             1x
@@ -301,10 +285,10 @@ app.add_route('/things', things)</pre>
                             Flask (0.10.1)
                         </td>
                         <td>
-                            3,165
+                            2,837
                         </td>
                         <td>
-                            316
+                            352
                         </td>
                         <td>
                             1x
@@ -313,7 +297,7 @@ app.add_route('/things', things)</pre>
 
                 </table>
 
-                <p class="lead">CPython 3.4.2</p>
+                <p class="lead">CPython 3.4.3</p>
 
                 <table class="benchmarks">
                     <tr>
@@ -332,13 +316,13 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon (0.2.0)
+                            Falcon (0.3.0)
                         </td>
                         <td>
-                            21,707
+                            19,514
                         </td>
                         <td>
-                            46
+                            51
                         </td>
                         <td>
                             7x
@@ -349,10 +333,10 @@ app.add_route('/things', things)</pre>
                             Bottle (0.12.8)
                         </td>
                         <td>
-                            12,049
+                            10,748
                         </td>
                         <td>
-                            83
+                            93
                         </td>
                         <td>
                             4x
@@ -360,13 +344,13 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr>
                         <td>
-                            Werkzeug (0.10.1)
+                            Werkzeug (0.10.4)
                         </td>
                         <td>
-                            5,686
+                            4,968
                         </td>
                         <td>
-                            176
+                            201
                         </td>
                         <td>
                             2x
@@ -377,10 +361,10 @@ app.add_route('/things', things)</pre>
                             Flask (0.10.1)
                         </td>
                         <td>
-                            3,298
+                            2,961
                         </td>
                         <td>
-                            303
+                            338
                         </td>
                         <td>
                             1x
@@ -391,10 +375,10 @@ app.add_route('/things', things)</pre>
                             Pecan (0.8.3)
                         </td>
                         <td>
-                            3,086
+                            2,763
                         </td>
                         <td>
-                            324
+                            362
                         </td>
                         <td>
                             1x
@@ -402,7 +386,7 @@ app.add_route('/things', things)</pre>
                     </tr>
                 </table>
 
-                <p class="lead">PyPy 2.5.0</p>
+                <p class="lead">PyPy 2.5.1</p>
 
                 <table class="benchmarks">
                     <tr>
@@ -421,16 +405,16 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon (0.2.0)
+                            Falcon (0.3.0)
                         </td>
                         <td>
-                            174,059
+                            256,417
                         </td>
                         <td>
-                            6
+                            4
                         </td>
                         <td>
-                            18x
+                            27x
                         </td>
                     </tr>
                     <tr>
@@ -438,24 +422,24 @@ app.add_route('/things', things)</pre>
                             Bottle (0.12.8)
                         </td>
                         <td>
-                            137,549
+                            145,411
                         </td>
                         <td>
                             7
                         </td>
                         <td>
-                            14x
+                            15x
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Werkzeug (0.10.1)
+                            Werkzeug (0.10.4)
                         </td>
                         <td>
-                            45,101
+                            44,276
                         </td>
                         <td>
-                            22
+                            23
                         </td>
                         <td>
                             5x
@@ -466,10 +450,10 @@ app.add_route('/things', things)</pre>
                             Pecan (0.8.3)
                         </td>
                         <td>
-                            16,286
+                            16,031
                         </td>
                         <td>
-                            61
+                            62
                         </td>
                         <td>
                             2x
@@ -480,10 +464,10 @@ app.add_route('/things', things)</pre>
                             Flask (0.10.1)
                         </td>
                         <td>
-                            9,819
+                            9,471
                         </td>
                         <td>
-                            102
+                            106
                         </td>
                         <td>
                             1x
@@ -520,16 +504,16 @@ app.add_route('/things', things)</pre>
                     </tr>
                     <tr class="highlight">
                         <td>
-                            Falcon (0.2.0)
+                            Falcon (0.3.0)
                         </td>
                         <td>
                             Extended
                         </td>
                         <td>
-                            16,527
+                            14,384
                         </td>
                         <td>
-                            61
+                            70
                         </td>
                         <td>
                             5x
@@ -543,10 +527,10 @@ app.add_route('/things', things)</pre>
                             Simple
                         </td>
                         <td>
-                            13,748
+                            12,583
                         </td>
                         <td>
-                            73
+                            79
                         </td>
                         <td>
                             4x
@@ -560,10 +544,10 @@ app.add_route('/things', things)</pre>
                             Simple
                         </td>
                         <td>
-                            3,165
+                            2,837
                         </td>
                         <td>
-                            316
+                            352
                         </td>
                         <td>
                             1x
@@ -579,7 +563,7 @@ app.add_route('/things', things)</pre>
                     <a href="#">Back to top</a>
                 </p>
                 <p>
-                    © 2014 Rackspace Hosting. Falcon photo courtesy of <a href="https://commons.wikimedia.org/wiki/File:Brown-Falcon,-Vic,-3.1.2008.jpg">John O'Neill</a>.
+                    Falcon photo courtesy of <a href="https://commons.wikimedia.org/wiki/File:Brown-Falcon,-Vic,-3.1.2008.jpg">John O'Neill</a>.
                 </p>
             </footer>
         </div>
