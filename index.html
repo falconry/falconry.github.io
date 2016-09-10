@@ -180,286 +180,106 @@
                     Benchmarks
                 </h2>
                 <p class="lead">
-                    <strong>Scenario.</strong> The benchmark acts as a WSGI server and performs a GET request directly on each framework's app. Each app parses a route template with a single embedded parameter, reads a query parameter and a header from the request data, sets an x-header on the response, and finally returns a 10 KiB plain-text body, randomly generated.
+                    <strong>Scenario.</strong>
+                    The benchmark acts as a WSGI server and performs a GET request
+                    directly on each framework's app. Each app parses a route template
+                    with a single embedded parameter, reads a query parameter and a header
+                    from the request data, sets an x-header on the response, and finally
+                    returns a 10 KiB plain-text body, randomly generated.
                 </p>
                 <p class="lead">
-                    <strong>Method.</strong> 200,000 iterations were executed per trial, and the best time was recorded for each framework over 20 trials. The order in which the frameworks were tested was randomized for each trial. Also, garbage collection was enabled as it would be in a production environment, and a full collection was forcefully triggered before each trial. Finally, results were calculated using the Decimal class, and rounded to the nearest whole number.
+                    <strong>Method.</strong>
+                    200,000 iterations were executed per trial, and the best time was
+                    recorded for each framework over 20 trials. The order in which
+                    the frameworks were tested was randomized for each trial. Also,
+                    garbage collection was enabled as it would be in a production
+                    environment, and a full collection was forcefully triggered
+                    before each trial. Finally, results were calculated using the
+                    Decimal class, and rounded to the nearest whole number.
                 </p>
                 <p class="lead">
-                    <strong>Platform.</strong> Benchmarks were executed on a Rackspace Cloud Server (1 GB Performance), running Arch 2014.8 (PVHVM) with all system packages updated to their latest versions as of May 2015. The frameworks were tested on several different versions of Python. Note that in these tests the Falcon modules were not cythonized; generally speaking, the reader may expect a ~10% boost in performance when Falcon is installed with Cython.
+                    <strong>Platform.</strong>
+                    Benchmarks were executed on a Rackspace Cloud Server (1 GB
+                    General Purpose), running Ubuntu 16.04.1 (PVHVM) with all system
+                    packages updated to their latest versions as of September 2016. The
+                    frameworks were tested on several different versions of Python.
+                    Note that in these tests the Falcon modules were not cythonized;
+                    generally speaking, the reader may expect a ~10% boost in
+                    performance when Falcon is installed with Cython.
                 </p>
-
-                <p class="lead">CPython 2.7.9</p>
-
-                <table class="benchmarks">
-                    <tr>
-                        <th>
-                            Framework
-                        </th>
-                        <th>
-                            req/sec
-                        </th>
-                        <th>
-                            μs/req
-                        </th>
-                        <th>
-                            Performance
-                        </th>
-                    </tr>
-                    <tr class="highlight">
-                        <td>
-                            Falcon (0.3.0)
-                        </td>
-                        <td>
-                            21,858
-                        </td>
-                        <td>
-                            46
-                        </td>
-                        <td>
-                            8x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Bottle (0.12.8)
-                        </td>
-                        <td>
-                            12,583
-                        </td>
-                        <td>
-                            79
-                        </td>
-                        <td>
-                            4x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Werkzeug (0.10.4)
-                        </td>
-                        <td>
-                            4,708
-                        </td>
-                        <td>
-                            212
-                        </td>
-                        <td>
-                            2x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Pecan (0.8.3)
-                        </td>
-                        <td>
-                            3,442
-                        </td>
-                        <td>
-                            291
-                        </td>
-                        <td>
-                            1x
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Flask (0.10.1)
-                        </td>
-                        <td>
-                            2,837
-                        </td>
-                        <td>
-                            352
-                        </td>
-                        <td>
-                            1x
-                        </td>
-                    </tr>
-
-                </table>
-
-                <p class="lead">CPython 3.4.3</p>
+                <p class="lead">CPython 2.7.12</p>
 
                 <table class="benchmarks">
                     <tr>
-                        <th>
-                            Framework
-                        </th>
-                        <th>
-                            req/sec
-                        </th>
-                        <th>
-                            μs/req
-                        </th>
-                        <th>
-                            Performance
-                        </th>
+                        <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance </th>
                     </tr>
                     <tr class="highlight">
-                        <td>
-                            Falcon (0.3.0)
-                        </td>
-                        <td>
-                            19,514
-                        </td>
-                        <td>
-                            51
-                        </td>
-                        <td>
-                            7x
-                        </td>
+                        <td>Falcon (1.0.0)</td><td>28,248</td><td>35</td><td>9x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Bottle (0.12.8)
-                        </td>
-                        <td>
-                            10,748
-                        </td>
-                        <td>
-                            93
-                        </td>
-                        <td>
-                            4x
-                        </td>
+                        <td>Bottle (0.12.9)</td><td>14,872</td><td>67</td><td>5x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Werkzeug (0.10.4)
-                        </td>
-                        <td>
-                            4,968
-                        </td>
-                        <td>
-                            201
-                        </td>
-                        <td>
-                            2x
-                        </td>
+                        <td>Werkzeug (0.11.11)</td><td>5,478</td><td>183</td><td>2x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Flask (0.10.1)
-                        </td>
-                        <td>
-                            2,961
-                        </td>
-                        <td>
-                            338
-                        </td>
-                        <td>
-                            1x
-                        </td>
+                        <td>Flask (0.11.1)</td><td>3,334</td><td>300</td><td>1x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Pecan (0.8.3)
-                        </td>
-                        <td>
-                            2,763
-                        </td>
-                        <td>
-                            362
-                        </td>
-                        <td>
-                            1x
-                        </td>
+                        <td>Pecan (1.1.2)</td><td>3,088</td><td>324</td><td>1x</td>
                     </tr>
                 </table>
 
-                <p class="lead">PyPy 2.5.1</p>
+                <p class="lead">CPython 3.5.2</p>
 
                 <table class="benchmarks">
                     <tr>
-                        <th>
-                            Framework
-                        </th>
-                        <th>
-                            req/sec
-                        </th>
-                        <th>
-                            μs/req
-                        </th>
-                        <th>
-                            Performance
-                        </th>
+                        <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance </th>
                     </tr>
                     <tr class="highlight">
-                        <td>
-                            Falcon (0.3.0)
-                        </td>
-                        <td>
-                            256,417
-                        </td>
-                        <td>
-                            4
-                        </td>
-                        <td>
-                            27x
-                        </td>
+                        <td>Falcon (1.0.0)</td><td>21,014</td><td>48</td><td>21x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Bottle (0.12.8)
-                        </td>
-                        <td>
-                            145,411
-                        </td>
-                        <td>
-                            7
-                        </td>
-                        <td>
-                            15x
-                        </td>
+                        <td>Bottle (0.12.9)</td><td>12,533</td><td>80</td><td>13x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Werkzeug (0.10.4)
-                        </td>
-                        <td>
-                            44,276
-                        </td>
-                        <td>
-                            23
-                        </td>
-                        <td>
-                            5x
-                        </td>
+                        <td>Werkzeug (0.11.11)</td><td>5,518</td><td>181</td><td>6x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Pecan (0.8.3)
-                        </td>
-                        <td>
-                            16,031
-                        </td>
-                        <td>
-                            62
-                        </td>
-                        <td>
-                            2x
-                        </td>
+                        <td>Flask (0.11.1)</td><td>3,305</td><td>303</td><td>3x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Flask (0.10.1)
-                        </td>
-                        <td>
-                            9,471
-                        </td>
-                        <td>
-                            106
-                        </td>
-                        <td>
-                            1x
-                        </td>
+                        <td>Pecan (1.1.2)</td><td>994</td><td>1006</td><td>1x</td>
                     </tr>
                 </table>
+
+                <p class="lead">PyPy 5.3.1</p>
+
+                <table class="benchmarks">
+                    <tr>
+                        <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance </th>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Falcon (1.0.0)</td><td>303,647</td><td>3</td><td>32x</td>
+                    </tr>
+                    <tr>
+                        <td>Bottle (0.12.9)</td><td>159,992</td><td>6</td><td>17x</td>
+                    </tr>
+                    <tr>
+                        <td>Werkzeug (0.11.11)</td><td>42,746</td><td>23</td><td>5x</td>
+                    </tr>
+                    <tr>
+                        <td>Flask (0.11.1)</td><td>10,359</td><td>97</td><td>1x</td>
+                    </tr>
+                    <tr>
+                        <td>Pecan (1.1.2)</td><td>9,434</td><td>106</td><td>1x</td>
+                    </tr>
+                </table>
+
                 <p>&nbsp;</p>
                 <p class="lead">
                     <strong>Extended Test.</strong> Falcon was also benchmarked
-                    under CPython 2.7.9 with a more realistic scenario, in which the routing table had
+                    under CPython 2.7.12 with a more realistic scenario, in which the routing table had
                     multiple entries, the query string contained percent-encoded characters, and several
                     complex response headers were set in the response. Note that even when Falcon is doing
                     more work, it still is able to outperform other frameworks, such
@@ -468,72 +288,16 @@
                 </p>
                 <table class="benchmarks">
                     <tr>
-                        <th>
-                            Framework
-                        </th>
-                        <th>
-                            Test
-                        </th>
-                        <th>
-                            req/sec
-                        </th>
-                        <th>
-                            μs/req
-                        </th>
-                        <th>
-                            Performance
-                        </th>
+                        <th>Framework</th><th>Test</th><th>req/sec</th><th>μs/req</th><th>Performance</th>
                     </tr>
                     <tr class="highlight">
-                        <td>
-                            Falcon (0.3.0)
-                        </td>
-                        <td>
-                            Extended
-                        </td>
-                        <td>
-                            14,384
-                        </td>
-                        <td>
-                            70
-                        </td>
-                        <td>
-                            5x
-                        </td>
+                        <td>Falcon (1.0.0)</td><td>Extended</td><td>18,385</td><td>54</td><td>6x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Bottle (0.12.8)
-                        </td>
-                        <td>
-                            Simple
-                        </td>
-                        <td>
-                            12,583
-                        </td>
-                        <td>
-                            79
-                        </td>
-                        <td>
-                            4x
-                        </td>
+                        <td>Bottle (0.12.9)</td><td>Simple</td><td>14,872</td><td>67</td><td>5x</td>
                     </tr>
                     <tr>
-                        <td>
-                            Flask (0.10.1)
-                        </td>
-                        <td>
-                            Simple
-                        </td>
-                        <td>
-                            2,837
-                        </td>
-                        <td>
-                            352
-                        </td>
-                        <td>
-                            1x
-                        </td>
+                        <td>Flask (0.11.11)</td><td>Simple</td><td>3,334</td><td>300</td><td>1x</td>
                     </tr>
                 </table>
             </div>
