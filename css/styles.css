@@ -5,7 +5,8 @@ background-color:#fefefe;
 }
 
 img.pull-right {
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .carousel {
@@ -261,9 +262,26 @@ pre {
   margin: 20px 0;
 }
 
+blockquote {
+  font-size: 18px;
+  margin: 1em 0 1.8em 0;
+}
+
+.quoteby {
+  padding-top: 1em;
+  font-style: italic;
+  color: #888;
+}
+
 .pss {
+  border-top: 1px solid black;
+  padding-top: 1em;
+  font-style: italic;
+  color: #888;
 }
 
 footer {
   margin-bottom: 40px;
 }
+
+
