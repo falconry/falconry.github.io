@@ -204,7 +204,7 @@
                 </p>
                 <p class="lead">
                     <strong>Method.</strong>
-                    200,000 iterations were executed per trial, and the best time was
+                    20,000 iterations were executed per trial, and the best time was
                     recorded for each framework over 20 trials. The order in which
                     the frameworks were tested was randomized for each trial. Also,
                     garbage collection was enabled as it would be in a production
@@ -214,87 +214,110 @@
                 </p>
                 <p class="lead">
                     <strong>Platform.</strong>
-                    Benchmarks were executed on a Rackspace Cloud Server (1 GB
-                    General Purpose), running Ubuntu 16.04.1 (PVHVM) with all system
-                    packages updated to their latest versions as of September 2016. The
-                    frameworks were tested on several different versions of Python.
-                    Note that in these tests the Falcon modules were not cythonized;
+                    Benchmarks were executed on a DigitalOcean 1GB VM, running
+                    Ubuntu 16.04.2 with all system packages updated to their
+                    latest versions as of May 2017. The frameworks were tested
+                    on several different versions of Python.  Note that in
+                    these tests the Falcon modules were not cythonized;
                     generally speaking, the reader may expect a ~10% boost in
                     performance when Falcon is installed with Cython.
                 </p>
-                <p class="lead">CPython 2.7.12</p>
+                <p class="lead">CPython 2.7.13</p>
 
                 <table class="benchmarks">
                     <tr>
                         <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance </th>
                     </tr>
                     <tr class="highlight">
-                        <td>Falcon (1.0.0)</td><td>24,578</td><td>41</td><td>9x</td>
+                        <td>Falcon (1.2.0)</td><td>37,277</td><td>26.83</td><td>10x</td>
                     </tr>
                     <tr>
-                        <td>Bottle (0.12.9)</td><td>13,306</td><td>75</td><td>5x</td>
+                        <td>Bottle (0.12.13)</td><td>19,633</td><td>50.94</td><td>5x</td>
                     </tr>
                     <tr>
-                        <td>Werkzeug (0.11.11)</td><td>4,903</td><td>204</td><td>2x</td>
+                        <td>Werkzeug (0.12.1)</td><td>7,088</td><td>141.08</td><td>2x</td>
                     </tr>
                     <tr>
-                        <td>Flask (0.11.1)</td><td>2,993</td><td>334</td><td>1x</td>
+                        <td>Flask (0.12.2)</td><td>3,986</td><td>250.86</td><td>1x</td>
                     </tr>
                     <tr>
-                        <td>Pecan (1.1.2)</td><td>2,731</td><td>366</td><td>1x</td>
+                        <td>Pecan (1.2.1)</td><td>3,659</td><td>273.33</td><td>1x</td>
                     </tr>
                 </table>
 
-                <p class="lead">CPython 3.5.2</p>
+                <p class="lead">CPython 3.6.1</p>
 
                 <table class="benchmarks">
                     <tr>
                         <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance </th>
                     </tr>
                     <tr class="highlight">
-                        <td>Falcon (1.0.0)</td><td>18,660</td><td>54</td><td>21x</td>
+                        <td>Falcon (1.2.0)</td><td>30,479</td><td>32.81</td><td>28x</td>
                     </tr>
                     <tr>
-                        <td>Bottle (0.12.9)</td><td>11,098</td><td>90</td><td>13x</td>
+                        <td>Bottle (0.12.13)</td><td>16,366</td><td>61.10</td><td>15x</td>
                     </tr>
                     <tr>
-                        <td>Werkzeug (0.11.11)</td><td>4,914</td><td>204</td><td>6x</td>
+                        <td>Werkzeug (0.12.1)</td><td>7,575</td><td>132.02</td><td>7x</td>
                     </tr>
                     <tr>
-                        <td>Flask (0.11.1)</td><td>3,071</td><td>326</td><td>4x</td>
+                        <td>Flask (0.12.2)</td><td>4,262</td><td>234.64</td><td>4x</td>
                     </tr>
                     <tr>
-                        <td>Pecan (1.1.2)</td><td>869</td><td>1151</td><td>1x</td>
+                        <td>Pecan (1.2.1)</td><td>1,082</td><td>924.48</td><td>1x</td>
                     </tr>
                 </table>
 
-                <p class="lead">PyPy 5.3.1</p>
+                <p class="lead">PyPy2 5.7.1</p>
 
                 <table class="benchmarks">
                     <tr>
                         <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance </th>
                     </tr>
                     <tr class="highlight">
-                        <td>Falcon (1.0.0)</td><td>289,135</td><td>3</td><td>45x</td>
+                        <td>Falcon (1.2.0)</td><td>345,728</td><td>2.89</td><td>34x</td>
                     </tr>
                     <tr>
-                        <td>Bottle (0.12.9)</td><td>139,868</td><td>7</td><td>22x</td>
+                        <td>Bottle (0.12.13)</td><td>234,304</td><td>4.27</td><td>23x</td>
                     </tr>
                     <tr>
-                        <td>Werkzeug (0.11.11)</td><td>43,564</td><td>23</td><td>7x</td>
+                        <td>Werkzeug (0.12.1)</td><td>65,313</td><td>15.31</td><td>6x</td>
                     </tr>
                     <tr>
-                        <td>Pecan (1.1.2)</td><td>8,432</td><td>119</td><td>1x</td>
+                        <td>Flask (0.12.2)</td><td>15,088</td><td>66.28</td><td>1x</td>
                     </tr>
                     <tr>
-                        <td>Flask (0.11.1)</td><td>6,471</td><td>155</td><td>1x</td>
+                        <td>Pecan (1.2.1)</td><td>10,227</td><td>97.78</td><td>1x</td>
+                    </tr>
+                </table>
+
+                <p class="lead">PyPy3 5.7.1-beta0</p>
+
+                <table class="benchmarks">
+                    <tr>
+                        <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance</th>
+                    </tr>
+                    <tr class="highlight">
+                        <td>Falcon (1.2.0)</td><td>113,666</td><td>8.80</td><td>126x</td>
+                    </tr>
+                    <tr>
+                        <td>Bottle (0.12.13)</td><td>87,197</td><td>11.47</td><td>97x</td>
+                    </tr>
+                    <tr>
+                        <td>Werkzeug (0.12.1)</td><td>15,095</td><td>66.25</td><td>17x</td>
+                    </tr>
+                    <tr>
+                        <td>Flask (0.12.2)</td><td>12,723</td><td>78.60</td><td>14x</td>
+                    </tr>
+                    <tr>
+                        <td>Pecan (1.2.1)</td><td>901</td><td>1109.67</td><td>1x</td>
                     </tr>
                 </table>
 
                 <p>&nbsp;</p>
                 <p class="lead">
                     <strong>Extended Test.</strong> Falcon was also benchmarked
-                    under CPython 2.7.12 with a more realistic scenario, in which the routing table had
+                    under CPython 2.7.13 with a more realistic scenario, in which the routing table had
                     multiple entries, the query string contained percent-encoded characters, and several
                     complex response headers were set in the response. Note that even when Falcon is doing
                     more work, it still is able to outperform other frameworks, such
@@ -306,13 +329,13 @@
                         <th>Framework</th><th>Test</th><th>req/sec</th><th>μs/req</th><th>Performance</th>
                     </tr>
                     <tr class="highlight">
-                        <td>Falcon (1.0.0)</td><td>Extended</td><td>16,305</td><td>61</td><td>6x</td>
+                        <td>Falcon (1.2.0)</td><td>Extended</td><td>23,500</td><td>42.55</td><td>6x</td>
                     </tr>
                     <tr>
-                        <td>Bottle (0.12.9)</td><td>Simple</td><td>13,306</td><td>75</td><td>5x</td>
+                        <td>Bottle (0.12.13)</td><td>Simple</td><td>19,633</td><td>50.94</td><td>5x</td>
                     </tr>
                     <tr>
-                        <td>Flask (0.11.11)</td><td>Simple</td><td>2,993</td><td>334</td><td>1x</td>
+                        <td>Flask (0.12.2)</td><td>Simple</td><td>3,986</td><td>250.86</td><td>1x</td>
                     </tr>
                 </table>
             </div>
