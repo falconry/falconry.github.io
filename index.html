@@ -108,6 +108,9 @@
                 Falcon is a very fast, very minimal Python web framework for building microservices, app backends, and higher-level frameworks. It is used by <a href="https://github.com/falconry/falcon/wiki/Who's-using-Falcon%3F">a growing number of organizations</a> around the world, including Cronitor, EMC, Hurricane Electric, OpenStack, Opera Software, Wargaming, and Rackspace.
               </p>
               <p>
+                Falcon complements more general Python web frameworks by providing bare-metal performance, reliability, and flexibility wherever you need it.
+              </p>
+              <p>
                 The Falcon web framework encourages the REST architectural style, meaning (among
                 other things) that you think in terms of resources and state
                 transitions, which map to HTTP methods.
@@ -178,7 +181,7 @@
                     Benefits
                 </h2>
                 <p class="lead">
-                    <strong>Performance.</strong> Unlike other Python web frameworks, Falcon won't bottleneck your API's performance under highly concurrent workloads. Many frameworks max out at serving simple "hello world" requests at a few thousand req/sec, while Falcon can easily serve many more on the same hardware.
+                    <strong>Performance.</strong> Unlike other Python web frameworks, Falcon won't bottleneck your API's performance under highly concurrent workloads. Many frameworks max out at serving simple "hello world" requests at a few thousand req/sec, while Falcon can easily serve many more on the same hardware. Considering a move to another programming language? Benchmark with Falcon + <a href="https://pypy.org/">PyPy</a> first.
                 </p>
                 <p class="lead">
                     <strong>Freedom.</strong> Falcon isn't very opinionated. In other words, the framework leaves a lot of decisions and implementation details to you, the API developer. This gives you a lot of freedom to <strong>customize and tune</strong> your implementation in order to create a solution that stands out from the crowd. Due to Falcon's minimalist design, Python community members are free to independently innovate on <a href="https://github.com/falconry/falcon/wiki">Falcon add-ons and complimentary packages</a>. You can take advantage of these projects, as well as extend the framework yourself in a variety of ways to create a best-fit solution for your web application.
