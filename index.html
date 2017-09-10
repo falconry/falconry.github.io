@@ -1,390 +1,528 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Falcon is a truly fast, light-weight framework for building cloud APIs. It tries to do as little as possible while remaining highly effective.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- These meta tags come first. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
-        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="manifest.json">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
+    <title>Falcon - Bare-metal web API framework for Python</title>
 
-        <link href='https://fonts.googleapis.com/css?family=Amethysta:400|Josefin+Sans:400,600,700|Raleway:400,700' rel='stylesheet'>
+    <!-- Styles -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/toolkit-minimal.min.css">
+    <link rel="stylesheet" href="/css/overrides.css">
+    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="css/styles.css" rel="stylesheet" type="text/css">
-        <title>
-            Falcon - The minimalist Python WSGI framework
-        </title>
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=PY4q2AqpJE">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=PY4q2AqpJE">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=PY4q2AqpJE">
+    <link rel="manifest" href="/manifest.json?v=PY4q2AqpJE">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=PY4q2AqpJE" color="#f0ad4e">
+    <link rel="shortcut icon" href="/favicon.ico?v=PY4q2AqpJE">
+    <meta name="apple-mobile-web-app-title" content="Falcon Framework">
+    <meta name="application-name" content="Falcon Framework">
+    <meta name="theme-color" content="#080602">
 
-    </head>
-    <body>
-        <div id="forkme">
-          <a href="https://github.com/falconry/falcon" rel="me" target="_blank">Fork me on GitHub</a>
-        </div>
-        <div id="rtd">
-          <a href="https://falcon.readthedocs.io" rel="me" target="_blank">Read the Docs</a>
-        </div>
-        <p id="falcon-version">Latest: <a href="https://pypi.python.org/pypi/falcon"></a></p>
-        <!-- Carousel ================================================== -->
-        <div id="myCarousel" class="carousel slide">
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-                <div class="active item">
-                    <div class="cover">
-                        <img src="img/falcon.png" class="pull-right">
-                    </div>
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>
-                                Falcon
-                            </h1>
-                            <p class="lead">
-                                Unburdening cloud apps for over <span id=lifetime></span> x 10<sup>-2</sup> centuries.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- /.carousel -->
-        <!-- Marketing messaging and featurettes ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
-        <div class="background-strip"></div>
-        <div id="nav" class="container marketing">
-            <!-- Three columns of text below the carousel -->
-            <div class="row">
-                <div class="span4">
-                    <img class="img-circle" data-src="holder.js/140x140">
-                    <h2>
-                        Design
-                    </h2>
-                    <p>
-                        Light, fast, and explicit
-                    </p>
-                    <p>
-                        <a class="btn" href="#Features">Details »</a>
-                    </p>
-                </div><!-- /.span4 -->
-                <div class="span4">
-                    <img class="img-circle" data-src="holder.js/140x140">
-                    <h2>
-                        Benefits
-                    </h2>
-                    <p>
-                        Performance, freedom and reliability
-                    </p>
-                    <p>
-                        <a class="btn" href="#Benefits">Details »</a>
-                    </p>
-                </div><!-- /.span4 -->
-                <div class="span4">
-                    <img class="img-circle" data-src="holder.js/140x140">
-                    <h2>
-                        Benchmarks
-                    </h2>
-                    <p>
-                        More requests, same hardware
-                    </p>
-                    <p>
-                        <a class="btn" href="#Metrics">Details »</a>
-                    </p>
-                </div><!-- /.span4 -->
-            </div><!-- /.row -->
-        </div><!-- START THE FEATURETTES -->
-        <div id="code-container" class="container">
-          <div class="row">
-            <div class="span5">
-              <p>
-                Falcon is a very fast, very minimal Python web framework for building microservices, app backends, and higher-level frameworks. It is used by <a href="https://github.com/falconry/falcon/wiki/Who's-using-Falcon%3F">a growing number of organizations</a> around the world, including LinkedIn, Cronitor, EMC, Hurricane Electric, OpenStack, Opera Software, Wargaming, and Rackspace.
-              </p>
-              <p>
-                Falcon complements more general Python web frameworks by providing bare-metal performance, reliability, and flexibility wherever you need it.
-              </p>
-              <p>
-                The Falcon web framework encourages the REST architectural style, meaning (among
-                other things) that you think in terms of resources and state
-                transitions, which map to HTTP methods.
-              </p>
-              <p>
-                  A number of Falcon add-ons, templates, and complimentary packages are
-                  available for use in your projects. We've listed several of these on the
-                  <a href="https://github.com/falconry/falcon/wiki">Falcon wiki</a> as a starting
-                  point, but you may also wish to search PyPI for additional resources.
-              </p>
-              <p>
-                  Falcon can be deployed in a variety of ways, depending on your needs. The
-                  framework speaks WSGI, and works great with CPython 2.6, 2.7, and 3.3+.
-                  PyPy and Jython are also supported out of the box.
-              </p>
-              <p>
-                You can find more information in the <a href="https://github.com/falconry/falcon">GitHub repo</a>
-                or in the <a href="https://falcon.readthedocs.io">official documentation</a>. We also have <a href="https://gitter.im/falconry/user">user</a> and
-                <a href="https://gitter.im/falconry/dev">dev</a> rooms on Gitter where you can ask questions and discuss ideas with the community.
-              </p>
-              <p class="pss">
-                Falcon is an <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-licensed</a> community project, built and maintained by a group of stylish volunteers from around the world. Extra special thanks to <a href="https://www.rackspace.com/">Rackspace</a> for sponsoring a large portion of the work that has gone into Falcon!
-              </p>
-            </div>
-            <div class="span6 pull-right">
-                <p>
-                    It's easy to get started with the <a href="https://github.com/falconry/falcon/blob/master/README.rst#installation" alt='falcon web framework install' target="_">Falcon web framework</a>.
-                </p>
-                <pre>$ pip install falcon</pre>
-                <p>
-                    Instances of <code>falcon.API</code> are WSGI
-                    applications and can run on any WSGI server, such as
-                    <a href="http://gunicorn.org">Gunicorn</a>:
-                </p>
-                <pre>$ gunicorn sample:api</pre>
-                <script src="https://gist.github.com/kgriffs/90837585fa4aca475229.js"></script>
-            </div>
+  </head>
+
+  <body data-spy="scroll" data-target="#navbar-primary" data-children="" data-offset="50">
+
+    <nav class="navbar navbar-toggleable fixed-top py-0">
+      <button
+        class="navbar-toggler navbar-toggler-right hidden-md-up py-3"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar-primary"
+        aria-controls="navbar-primary"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.svg" width="32" height="32" alt="Falcon web framework logo">
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbar-primary">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#section-about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-design">Design</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-benchmarks">Benchmarks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-community">Community</a>
+          </li>
+          <li class="nav-item">
+            <a id="falcon-version" class="nav-link" href="http://pypi.python.org/pypi/falcon" target="_blank">PyPI</a>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </nav>
+
+    <div class="block text-center mt-5">
+      <h1 class="block-title display-1">Falcon</h1>
+
+      <p class="text-muted">Unburdening APIs for over <span id="lifetime"></span> x 10<sup>-2</sup> centuries.</p>
+      <div>
+        <a href="https://falcon.readthedocs.io/en/stable/user/index.html"><button class="btn btn-outline-warning mt-3">Get started</button></a>
+        <a href="https://github.com/falconry/falcon#contributing"><button class="btn btn-outline-warning mt-3">Contribute</button></a>
+      </div>
+
+    </div>
+
+    <div id="section-example" class="container p-0 mb-3">
+      <div class="container">
+        <div class="row mx-5 px-3">
+          <div class="col-12">
+          
+            <pre><code class="python"># sample.py
+
+import falcon
+ 
+class QuoteResource:
+    def on_get(self, req, resp):
+        """Handles GET requests"""
+        quote = {
+            'quote': (
+                "I've always been more interested in "
+                "the future than in the past."
+            ),
+            'author': 'Grace Hopper'
+        }
+
+        resp.media = quote
+ 
+api = falcon.API()
+api.add_route('/quote', QuoteResource())</code></pre>
+
+            <pre><code class="bash">$ pip install falcon
+$ gunicorn sample:api</code></pre>
           </div>
         </div>
-        <div id="primary-container" class="container marketing">
-            <div class="featurette">
-                <a id="Features"></a> <img class="featurette-image pull-right" src="">
-                <h2 class="featurette-heading">
-                    Design
-                </h2>
-                <img alt="Falcon is a *truly* fast, light Python WSGI framework." src="img/flight-silhouettes.png" width="400px" class="pull-right">
-                <blockquote>
-                        Perfection is finally attained not when there is no longer anything
-                        to add, but when there is no longer anything to take away.
+      </div>
+    </div>
 
-                        <div class="quoteby">- Antoine de Saint-Exupéry</div>
-                </blockquote>
-                <p class="lead">
-                    <strong>Light.</strong> Falcon follows the minimalist philosophy. Only the essentials are included, with <em>six</em> and <em>mimeparse</em> the only dependencies beyond the standard library. We work to keep the code lean, making Falcon easier to test, optimize, and deploy.
-                </p>
-                <p class="lead">
-                    <strong>Fast.</strong> Cloud APIs need to turn around requests quickly, and make efficient use of hardware. Falcon processes requests several times faster than other popular web frameworks.
-                </p>
-                <p class="lead">
-                    <strong>Explicit.</strong> Falcon eschews magic. The last thing you want is your framework doing sneaky things behind your back. It's obvious which inputs lead to which outputs, and where variables originate. All this makes it easier to extend the framework, reason about the code, and debug edge cases in large-scale deployments of your application.
-                </p>
-            </div>
-            <hr class="featurette-divider">
-            <div class="featurette">
-                <a id="Benefits"></a> <img alt="" class="featurette-image pull-right" src="">
-                <h2 class="featurette-heading">
-                    Benefits
-                </h2>
-                <p class="lead">
-                    <strong>Performance.</strong> Unlike other Python web frameworks, Falcon won't bottleneck your API's performance under highly concurrent workloads. Many frameworks max out at serving simple "hello world" requests at a few thousand req/sec, while Falcon can easily serve many more on the same hardware. Considering a move to another programming language? Benchmark with Falcon + <a href="https://pypy.org/">PyPy</a> first.
-                </p>
-                <p class="lead">
-                    <strong>Freedom.</strong> Falcon isn't very opinionated. In other words, the framework leaves a lot of decisions and implementation details to you, the API developer. This gives you a lot of freedom to <strong>customize and tune</strong> your implementation in order to create a solution that stands out from the crowd. Due to Falcon's minimalist design, Python community members are free to independently innovate on <a href="https://github.com/falconry/falcon/wiki">Falcon add-ons and complimentary packages</a>. You can take advantage of these projects, as well as extend the framework yourself in a variety of ways to create a best-fit solution for your web application.
-                </p>
-                <p class="lead">
-                    <strong>Reliability.</strong> Falcon doesn't include a lot of cruft that is simply unnecessary when building web services. Less code and fewer dependencies means a smaller attack surface, lower memory usage, and fewer places for bugs to hide. Our build fails at anything less than <strong>100% code coverage</strong>. We use <a href="https://travis-ci.org/falconry/falcon" target="_blank">Travis</a> and <a href="https://codecov.io/github/falconry/falcon" target="_blank">Codecov</a> to keep ourselves honest.
-                </p>
-                <p class="lead"></p>
-            </div>
-            <hr class="featurette-divider">
-            <div class="featurette">
-                <a id="Metrics"></a> <img class="featurette-image pull-right" src="">
-                <h2 class="featurette-heading">
-                    Benchmarks
-                </h2>
-                <p class="lead">
-                    <strong>Scenario.</strong>
-                    The benchmark acts as a WSGI server and performs a GET request
-                    directly on each framework's app. Each app parses a route template
-                    with a single embedded parameter, reads a query parameter and a header
-                    from the request data, sets an x-header on the response, and finally
-                    returns a 10 KiB plain-text body, randomly generated.
-                </p>
-                <p class="lead">
-                    <strong>Method.</strong>
-                    20,000 iterations were executed per trial, and the best time was
-                    recorded for each framework over 20 trials. The order in which
-                    the frameworks were tested was randomized for each trial. Also,
-                    garbage collection was enabled as it would be in a production
-                    environment, and a full collection was forcefully triggered
-                    before each trial. Finally, results were calculated using the
-                    Decimal class, and rounded to the nearest whole number.
-                </p>
-                <p class="lead">
-                    <strong>Platform.</strong>
-                    Benchmarks were executed on a DigitalOcean 1GB VM, running
-                    Ubuntu 16.04.2 with all system packages updated to their
-                    latest versions as of May 2017. The frameworks were tested
-                    on several different versions of Python.  Note that in
-                    these tests the Falcon modules were not cythonized;
-                    generally speaking, the reader may expect a ~10% boost in
-                    performance when Falcon is installed with Cython.
-                </p>
-                <p class="lead">CPython 2.7.13</p>
 
-                <table class="benchmarks">
-                    <tr>
-                        <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance </th>
-                    </tr>
-                    <tr class="highlight">
-                        <td>Falcon (1.2.0)</td><td>37,277</td><td>26.83</td><td>10x</td>
-                    </tr>
-                    <tr>
-                        <td>Bottle (0.12.13)</td><td>19,633</td><td>50.94</td><td>5x</td>
-                    </tr>
-                    <tr>
-                        <td>Werkzeug (0.12.1)</td><td>7,088</td><td>141.08</td><td>2x</td>
-                    </tr>
-                    <tr>
-                        <td>Flask (0.12.2)</td><td>3,986</td><td>250.86</td><td>1x</td>
-                    </tr>
-                    <tr>
-                        <td>Pecan (1.2.1)</td><td>3,659</td><td>273.33</td><td>1x</td>
-                    </tr>
-                </table>
+    <div id="section-about" class="container py-5"></div>
+    <div class="container">
+      <div class="row mx-5">
+        <div class="col-12">
+          <ul class="featured-list featured-list-bordered">
+            <li class="mb-5">
+              <div class="featured-list-icon">
+                <span class="icon icon-gauge"></span>
+              </div>
 
-                <p class="lead">CPython 3.6.1</p>
+              <h3>Fast</h3>
+              <p>
+                Falcon is a bare-metal Python web API framework for building very fast app backends and microservices.   
+              </p>
+            </li>
 
-                <table class="benchmarks">
-                    <tr>
-                        <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance </th>
-                    </tr>
-                    <tr class="highlight">
-                        <td>Falcon (1.2.0)</td><td>30,479</td><td>32.81</td><td>28x</td>
-                    </tr>
-                    <tr>
-                        <td>Bottle (0.12.13)</td><td>16,366</td><td>61.10</td><td>15x</td>
-                    </tr>
-                    <tr>
-                        <td>Werkzeug (0.12.1)</td><td>7,575</td><td>132.02</td><td>7x</td>
-                    </tr>
-                    <tr>
-                        <td>Flask (0.12.2)</td><td>4,262</td><td>234.64</td><td>4x</td>
-                    </tr>
-                    <tr>
-                        <td>Pecan (1.2.1)</td><td>1,082</td><td>924.48</td><td>1x</td>
-                    </tr>
-                </table>
+            <li class="mb-5">
+              <div class="featured-list-icon">
+                <span class="icon icon-linkedin"></span>
+              </div>
+              <h3>Reliable</h3>
+              <p>
+                Organizations like LinkedIn, Leadpages, Wargaming, and Rackspace <a href="https://github.com/falconry/falcon/wiki/Who's-using-Falcon%3F" target="_blank">rely on Falcon</a> for critical projects.
+              </p>
+            </li>
 
-                <p class="lead">PyPy2 5.7.1</p>
+            <li class="mb-5">
+              <div class="featured-list-icon">
+                <span class="icon icon-flow-tree"></span>
+              </div>
 
-                <table class="benchmarks">
-                    <tr>
-                        <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance </th>
-                    </tr>
-                    <tr class="highlight">
-                        <td>Falcon (1.2.0)</td><td>345,728</td><td>2.89</td><td>34x</td>
-                    </tr>
-                    <tr>
-                        <td>Bottle (0.12.13)</td><td>234,304</td><td>4.27</td><td>23x</td>
-                    </tr>
-                    <tr>
-                        <td>Werkzeug (0.12.1)</td><td>65,313</td><td>15.31</td><td>6x</td>
-                    </tr>
-                    <tr>
-                        <td>Flask (0.12.2)</td><td>15,088</td><td>66.28</td><td>1x</td>
-                    </tr>
-                    <tr>
-                        <td>Pecan (1.2.1)</td><td>10,227</td><td>97.78</td><td>1x</td>
-                    </tr>
-                </table>
+              <h3>Complementary</h3>
+              <p>
+                Falcon complements more general Python web frameworks by providing bare-metal performance and flexibility wherever you need it.
+              </p>
+            </li>
 
-                <p class="lead">PyPy3 5.7.1-beta0</p>
+            <li class="mb-5">
+              <div class="featured-list-icon">
+                <span class="icon icon-cloud"></span>
+              </div>
+              <h3>RESTful</h3>
+              <p>
+                The Falcon web framework encourages the REST architectural style. Resource classes implement HTTP method handlers that resolve requests and perform state transitions.
+              </p>
+            </li>
 
-                <table class="benchmarks">
-                    <tr>
-                        <th>Framework</th><th>req/sec</th><th>μs/req</th><th>Performance</th>
-                    </tr>
-                    <tr class="highlight">
-                        <td>Falcon (1.2.0)</td><td>113,666</td><td>8.80</td><td>126x</td>
-                    </tr>
-                    <tr>
-                        <td>Bottle (0.12.13)</td><td>87,197</td><td>11.47</td><td>97x</td>
-                    </tr>
-                    <tr>
-                        <td>Werkzeug (0.12.1)</td><td>15,095</td><td>66.25</td><td>17x</td>
-                    </tr>
-                    <tr>
-                        <td>Flask (0.12.2)</td><td>12,723</td><td>78.60</td><td>14x</td>
-                    </tr>
-                    <tr>
-                        <td>Pecan (1.2.1)</td><td>901</td><td>1109.67</td><td>1x</td>
-                    </tr>
-                </table>
+            <li class="mb-5">
+              <div class="featured-list-icon">
+                <span class="icon icon-tools"></span>
+              </div>
+              <h3>Extensible</h3>
+              <p>
+                A number of Falcon add-ons, templates, and complementary packages are
+                available for use in your projects. We've listed several of these on the
+                <a href="https://github.com/falconry/falcon/wiki" target="_blank">Falcon wiki</a> as a starting
+                point, but you may also wish to search PyPI for additional resources.
+              </p>
+            </li>
 
-                <p>&nbsp;</p>
-                <p class="lead">
-                    <strong>Extended Test.</strong> Falcon was also benchmarked
-                    under CPython 2.7.13 with a more realistic scenario, in which the routing table had
-                    multiple entries, the query string contained percent-encoded characters, and several
-                    complex response headers were set in the response. Note that even when Falcon is doing
-                    more work, it still is able to outperform other frameworks, such
-                    as Bottle, which are only doing the bare minimum to construct
-                    a response.
-                </p>
-                <table class="benchmarks">
-                    <tr>
-                        <th>Framework</th><th>Test</th><th>req/sec</th><th>μs/req</th><th>Performance</th>
-                    </tr>
-                    <tr class="highlight">
-                        <td>Falcon (1.2.0)</td><td>Extended</td><td>23,500</td><td>42.55</td><td>6x</td>
-                    </tr>
-                    <tr>
-                        <td>Bottle (0.12.13)</td><td>Simple</td><td>19,633</td><td>50.94</td><td>5x</td>
-                    </tr>
-                    <tr>
-                        <td>Flask (0.12.2)</td><td>Simple</td><td>3,986</td><td>250.86</td><td>1x</td>
-                    </tr>
-                </table>
-            </div>
-            <hr class="featurette-divider">
-            <!-- /END THE FEATURETTES -->
-            <!-- FOOTER -->
-            <footer>
-                <p class="pull-right">
-                    <a href="#">Back to top</a>
-                </p>
-                <p>
-                    Falcon photo courtesy of <a href="https://commons.wikimedia.org/wiki/File:Brown-Falcon,-Vic,-3.1.2008.jpg">John O'Neill</a>.
-                </p>
+            <li class="mb-5">
+              <div class="featured-list-icon">
+                <span class="icon icon-thumbs-up"></span>
+              </div>
+              <h3>Compatible</h3>
+              <p>
+                Thanks to WSGI, Falcon runs on a large variety of web servers and platforms. Falcon works great with CPython 2.6, 2.7, and 3.3+. Try <a href="https://www.pypy.org" target="_blank">PyPy</a> for an extra speed boost.
+              </p>
+            </li>
 
-<!--
-                <p>
-                    CDN sponsored by <a href="https://www.keycdn.com/"><img src="img/keycdn-logo.png"></a>
-                    <br>
-                    <br>
-                    <br>
-                </p>
- -->
-            </footer>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <div id="section-design" class="jumbotron jumbotron-fluid mt-5">
+      <div class="container">
+        <div class="row mx-5 px-3">
+          <div class="col-12">
 
-        <script>
-            function lifetime() {
-                var FALCON_EPOCH = 1357365600;
-                var SECONDS_PER_ORBITAL_ROTATION = 31558149.504000004;
+            <h1 class="display-3 section-title">Design</h1>
 
-                var delta_sec = (Date.now() / 1000) - FALCON_EPOCH;
+            <p class="lead">We designed Falcon to support the demanding needs of large-scale
+            microservices and responsive app backends. Falcon complements more
+            general Python web frameworks by providing bare-metal performance,
+            reliability, and flexibility wherever you need it.</p>
 
-                return (delta_sec / SECONDS_PER_ORBITAL_ROTATION).toFixed(2)
-            }
+            <p><strong>Fast.</strong> Same hardware, more requests. Falcon turns around
+            requests several times faster than most other Python frameworks. For
+            an extra speed boost, Falcon compiles itself with Cython when
+            available, and also works well with <a href="https://pypy.org" target="_blank">PyPy</a>.
+            Considering a move to another programming language? Benchmark with
+            Falcon + PyPy first.</p>
+            <p><strong>Reliable.</strong> We go to great lengths to avoid introducing
+            breaking changes, and when we do they are fully documented and only
+            introduced (in the spirit of
+            <a href="http://semver.org/" target="_blank">SemVer</a>) with a major version
+            increment. The code is rigorously tested with numerous inputs and we
+            require 100% coverage at all times. Six and mimeparse are the only
+            third-party dependencies.</p>
+            <p><strong>Flexible.</strong> Falcon leaves a lot of decisions and implementation
+            details to you, the API developer. This gives you a lot of freedom to
+            customize and tune your implementation. Due to Falcon's minimalist
+            design, Python community members are free to independently innovate on
+            <a href="https://github.com/falconry/falcon/wiki" target="_blank">Falcon add-ons and complementary packages</a>.</p>
+            <p><strong>Debuggable.</strong> Falcon eschews magic. It's easy to tell which inputs
+            lead to which outputs. Unhandled exceptions are never encapsulated or
+            masked. Potentially surprising behaviors, such as automatic request body
+            parsing, are well-documented and disabled by default. Finally, when it
+            comes to the framework itself, we take care to keep logic paths simple
+            and understandable. All this makes it easier to reason about the code
+            and to debug edge cases in large-scale deployments.</p>
 
-            $(document).ready(function() {
+          </div>
+        </div>
+      </div>
+    </div>
 
-                $.ajax({
-                    url: "https://pypi.python.org/pypi/falcon/json"
-                }).done(function(package) {
-                    $("#falcon-version a").html(package.info.version);
-                });
+    <blockquote class="pull-quote pt-1">
+      <p>
+        “Perfection is finally attained not when there is no longer anything to add, but when there is no longer anything to take away.”
+      </p>
+      <cite>Antoine de Saint-Exupéry</cite>
+    </blockquote>   
 
-                $("#lifetime").html(lifetime())
-            });
-        </script>
-    </body>
+    <div id="section-features" class="jumbotron jumbotron-fluid mt-5">
+      <div class="container">
+
+        <div class="row mx-5 px-3">
+          <div class="col-12">
+
+            <h1 class="display-3 section-title">Features</h1>
+          </div>
+        </div>
+        <div class="row mx-5 px-3">
+          <div class="col">
+
+            <ul class="pl-3">
+              <li>Highly-optimized, extensible code base</li>
+              <li>Intuitive routing via URI templates and REST-inspired resource
+              classes</li>
+              <li>Easy access to headers and bodies through request and response
+              classes</li>
+              <li>DRY request processing via middleware components and hooks</li>
+              <li>Idiomatic HTTP error responses</li>
+              <li>Straightforward exception handling</li>
+              <li>Snappy unit testing through WSGI helpers and mocks</li>
+              <li>CPython 2.6-2.7 and 3.3+, or PyPy 2.7 and 3.5+</li>
+              <li>Cython support for an extra speed boost under CPython</li>
+            </ul>
+
+          </div>
+          
+          <div class="col-3 collapse-on-sm">
+            <img src="img/flight-silhouettes.png" width="200" height="125">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <blockquote class="pull-quote">
+      <p>
+        “Don't lower your expectations to meet your performance. Raise your level of performance to meet your expectations. Expect the best of yourself, and then do what is necessary to make it a reality.”
+      </p>
+      <cite>Ralph Marston</cite>
+    </blockquote>   
+
+    <div id="section-benchmarks" class="jumbotron jumbotron-fluid">
+      <div class="container">
+
+        <div class="row mx-5 px-3">
+          <div class="col-12">
+
+            <h1 class="display-3 section-title">Benchmarks</h1>
+          </div>
+        </div>
+        <div class="row mx-5 px-3">
+          <div class="col-12">
+
+              <p class="lead">
+                To give you a feel for Falcon's performance, we've included the results
+                of running a simple benchmark across several popular Python web frameworks.
+
+                We work very hard to ensure that Falcon itself will not be the bottleneck
+                in your application.  
+              </p>
+
+              <p>
+                <strong>Scenario.</strong>
+                The benchmark acts as a WSGI server and performs a GET request
+                directly on each framework's PEP-3333 app. Each app parses a route template
+                with a single embedded parameter, reads a query parameter and a header
+                from the request data, sets an x-header on the response, and finally
+                returns a 10 KiB plain-text body, randomly generated.
+              </p>
+              <p>
+                <strong>Method.</strong>
+                20,000 iterations were executed per trial, and the best time was
+                recorded for each framework over 20 trials. The order in which
+                the frameworks were tested was randomized for each trial. Also,
+                garbage collection was enabled as it would be in a production
+                environment, and a full collection was forcefully triggered
+                before each trial. Finally, results were calculated using the
+                Decimal class, and rounded to the nearest whole number.
+              </p>
+              <p>
+                <strong>Platform.</strong>
+                Benchmarks were executed on a DigitalOcean 1GB VM, running
+                Ubuntu 16.04.2 with all system packages updated to their
+                latest versions as of May 2017. The frameworks were tested
+                on several different versions of Python.  Note that in
+                these tests the Falcon modules were not cythonized;
+                generally speaking, the reader may expect a ~10% boost in
+                performance when Falcon is installed with Cython.
+              </p>
+
+              <h3 class="pt-4">CPython 2.7.13</h3>
+
+              <table class="table table-hover table-inverse">
+                <thead>
+                  <tr>
+                    <th></th><th>req/sec</th><th>μs/req</th><th>speedup</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Falcon (1.2.0)</td><td>37,277</td><td>26.83</td><td>10x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Bottle (0.12.13)</td><td>19,633</td><td>50.94</td><td>5x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Werkzeug (0.12.1)</td><td>7,088</td><td>141.08</td><td>2x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Flask (0.12.2)</td><td>3,986</td><td>250.86</td><td>1x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Pecan (1.2.1)</td><td>3,659</td><td>273.33</td><td>1x</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 class="pt-4">CPython 3.6.1</h3>
+
+              <table class="table table-hover table-inverse">
+                <thead>
+                  <tr>
+                    <th></th><th>req/sec</th><th>μs/req</th><th>speedup</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Falcon (1.2.0)</td><td>30,479</td><td>32.81</td><td>28x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Bottle (0.12.13)</td><td>16,366</td><td>61.10</td><td>15x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Werkzeug (0.12.1)</td><td>7,575</td><td>132.02</td><td>7x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Flask (0.12.2)</td><td>4,262</td><td>234.64</td><td>4x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Pecan (1.2.1)</td><td>1,082</td><td>924.48</td><td>1x</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 class="pt-4">PyPy2 5.7.1</h3>
+
+              <table class="table table-hover table-inverse">
+                <thead>
+                  <tr>
+                    <th></th><th>req/sec</th><th>μs/req</th><th>speedup</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      <td>Falcon (1.2.0)</td><td>345,728</td><td>2.89</td><td>34x</td>
+                  </tr>
+                  <tr class="text-muted">
+                      <td>Bottle (0.12.13)</td><td>234,304</td><td>4.27</td><td>23x</td>
+                  </tr>
+                  <tr class="text-muted">
+                      <td>Werkzeug (0.12.1)</td><td>65,313</td><td>15.31</td><td>6x</td>
+                  </tr>
+                  <tr class="text-muted">
+                      <td>Flask (0.12.2)</td><td>15,088</td><td>66.28</td><td>1x</td>
+                  </tr>
+                  <tr class="text-muted">
+                      <td>Pecan (1.2.1)</td><td>10,227</td><td>97.78</td><td>1x</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 class="pt-4">PyPy3 5.7.1-beta0</h3>
+
+              <table class="table table-hover table-inverse">
+                <thead>
+                  <tr>
+                    <th></th><th>req/sec</th><th>μs/req</th><th>speedup</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Falcon (1.2.0)</td><td>113,666</td><td>8.80</td><td>126x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Bottle (0.12.13)</td><td>87,197</td><td>11.47</td><td>97x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Werkzeug (0.12.1)</td><td>15,095</td><td>66.25</td><td>17x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Flask (0.12.2)</td><td>12,723</td><td>78.60</td><td>14x</td>
+                  </tr>
+                  <tr class="text-muted">
+                    <td>Pecan (1.2.1)</td><td>901</td><td>1109.67</td><td>1x</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 class="pt-4">Extended Test</h3>
+              <p>
+                  Falcon was also benchmarked
+                  under CPython 2.7.13 with a more realistic scenario, in which the routing table had
+                  multiple entries, the query string contained percent-encoded characters, and several
+                  complex response headers were set in the response. Note that even when Falcon is doing
+                  more work, it still is able to outperform other frameworks, such
+                  as Bottle, which are only doing the bare minimum to construct
+                  a response.
+              </p>
+              <table class="table table-hover table-inverse">
+                <thead>
+                  <tr>
+                    <th></th><th>test</th><th>req/sec</th><th>μs/req</th><th>speedup</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      <td>Falcon (1.2.0)</td><td>Extended</td><td>23,500</td><td>42.55</td><td>6x</td>
+                  </tr>
+                  <tr class="text-muted">
+                      <td>Bottle (0.12.13)</td><td>Simple</td><td>19,633</td><td>50.94</td><td>5x</td>
+                  </tr>
+                  <tr class="text-muted">
+                      <td>Flask (0.12.2)</td><td>Simple</td><td>3,986</td><td>250.86</td><td>1x</td>
+                  </tr>
+              </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <blockquote class="pull-quote">
+      <p>
+        "In order to be great, you just have to care. You have to care about your world, community, and equality."
+      </p>
+      <cite>Katori Hall</cite>
+    </blockquote>  
+
+    <div id="section-community" class="jumbotron jumbotron-fluid">
+      <div class="container">
+
+        <div class="row mx-5 px-3">
+          <div class="col-12">
+            <h1 class="display-3 section-title">Community</h1>
+
+            <p class="lead">
+              Falcon is an <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache-licensed</a> community project, built and maintained by stylish volunteers from around the world. 
+            </p>
+
+            <img class="bordered-block float-right ml-3 collapse-on-sm" src="img/pycon-2016-falcon-web-framework-sprint-1.jpg" width="160" height="120" alt="PyCon 2016 Sprints">
+
+            <p>
+              A number of Falcon add-ons, templates, and complementary packages are available for use in your projects. We've listed several of these on the <a href="https://github.com/falconry/falcon/wiki" target="_blank">Falcon wiki</a> as a starting point, but you may also wish to search PyPI for additional resources.</p> 
+            <p>
+              The Falconry community on Gitter is a great place to ask questions and share your ideas. You can find us in <a href="https://gitter.im/falconry/user" target="_blank">falconry/user</a>. We also have a <a href="https://gitter.im/falconry/dev" target="_blank">falconry/dev</a> room for discussing the design and development of the framework itself.
+            </p> 
+            <p>
+              Per our <a href="https://github.com/falconry/falcon/blob/master/CODEOFCONDUCT.md" target="_blank">Code of Conduct</a>, we expect everyone who participates in community discussions to act professionally. Please lead by example in encouraging constructive discussions. Each individual in the community is responsible for creating a positive, constructive, and productive culture.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container text-center">
+      <div class="container small">
+        <p>
+          Extra special thanks to <a href="https://www.rackspace.com/" target="_blank">Rackspace</a> for sponsoring the initial work on this project.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Include jQuery (required) and the JS for the theme -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/toolkit.min.js"></script>
+
+    <!-- Syntax highlighting -->
+    <script src="/highlight/highlight.pack.js"></script>
+
+    <!-- Dynamics -->
+    <script src="/js/dynamics.js"></script>
+  </body>
 </html>
