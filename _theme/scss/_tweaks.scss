@@ -1,0 +1,95 @@
+body {
+  position: relative;
+}
+
+.btn-outline-primary:hover {
+  color: $body-bg;
+}
+
+#documentFooter {
+  margin: 4em 0;
+  font-size: smaller;
+}
+
+.jumbotron {
+  margin: 2em 0;
+  padding-top: 5em;
+  color: $body-bg;
+}
+
+#sectionTitle {
+  margin: 140px auto 100px auto;
+}
+
+.section-title, {
+  margin-left: -3px;
+}
+
+nav {
+  background-color: #232323;
+}
+
+.navbar-brand img {
+  margin: 0.5em 0;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler-icon:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-hover-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler-icon:active {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-active-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+#falconVersion:before {
+  content: '|';
+  padding-right: 1em;
+  color: $gray-500;
+}
+
+.bordered-block {
+  box-shadow: 2px 2px 4px 0 #000;
+}
+
+.table-benchmarks th:nth-child(n+2) {
+  text-align: right;
+}
+
+.table-benchmarks td:nth-child(n+2) {
+  text-align: right;
+}
+
+.table-benchmarks tbody tr:first-child {
+  background-color: lighten($color-primary, 20%);
+
+}
+
+.table-benchmarks {
+  tbody, thead, tr:first-child, tr:first-child th, tr:first-child td {
+    border: none;
+  }
+}
+
+.featured-list {
+  margin: 0 20px;
+}
+
+pre {
+  margin: 1em 32px;
+}
+
+@media (max-width: 768px) { 
+  .collapse-on-sm {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) { 
+  #falconVersion:before {
+    display: none;
+  }
+}
