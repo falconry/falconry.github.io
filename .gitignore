@@ -1,2 +1,4 @@
 .DS_Store
-theme/node_modules
+_theme/node_modules
+_theme/.gulp-scss-cache
+_theme/.sass-cache

@@ -1,0 +1,29 @@
+// --------------------------------------------------
+// Featured List
+// --------------------------------------------------
+
+.featured-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 90px;
+    padding-bottom: 2em;
+  }
+}
+
+.featured-list-icon {
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  display: inline-block;
+  font-size: 3em;
+  text-align: center;
+  line-height: 0;
+  width: 60px;
+}
+
+.features-list-icon-short {
+  top: 0;
+}
