@@ -1,10 +1,31 @@
-function lifetime() {
+function setLifetime() {
     var FALCON_EPOCH = 1357365600;
     var SECONDS_PER_ORBITAL_ROTATION = 31558149.504000004;
 
     var delta_sec = (Date.now() / 1000) - FALCON_EPOCH;
 
-    return (delta_sec / SECONDS_PER_ORBITAL_ROTATION).toFixed(2)
+    var lifetime = (delta_sec / SECONDS_PER_ORBITAL_ROTATION).toFixed(2);
+    var lifetime_tick = 0;
+    var lifetime_delay = 5;
+
+    function updateLifetime() {
+        lifetime_tick += lifetime / 100;
+
+        if (lifetime_tick < lifetime) {
+            $("#lifetime").html(lifetime_tick.toFixed(2));
+
+            if ((lifetime_tick / lifetime) > 0.8) {
+                lifetime_delay *= 1.1;
+            }
+
+            setTimeout(updateLifetime, lifetime_delay);
+        }
+        else {
+            $("#lifetime").html(lifetime);
+        }
+    }
+
+    updateLifetime();
 }
 
 function setVersion() {
@@ -14,7 +35,7 @@ function setVersion() {
 
     }).done(function(package) {
 
-        $("#falconVersion").html('<span class="fa fa-download"></span> ' + package.info.version);
+        $("#falconVersion").html(package.info.version);
 
     });    
 }
@@ -108,13 +129,13 @@ function insertBenchmarks() {
 
 $(document).ready(function() {
 
+    setLifetime();
+
     setVersion();
 
-    $("#lifetime").html(lifetime());
-
-    $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-    });
+    // $('pre code').each(function(i, block) {
+    //     hljs.highlightBlock(block);
+    // });
 
     insertBenchmarks();    
 

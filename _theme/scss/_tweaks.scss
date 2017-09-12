@@ -45,7 +45,7 @@ nav {
   outline: none;
 }
 
-#falconVersion:before {
+#falconVersionLink:before {
   content: '|';
   padding-right: 1em;
   color: $gray-500;
@@ -89,7 +89,7 @@ pre {
 }
 
 @media (max-width: 576px) { 
-  #falconVersion:before {
+  #falconVersionLink:before {
     display: none;
   }
 }
