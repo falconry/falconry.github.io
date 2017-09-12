@@ -8,10 +8,9 @@
 
     <title>Falcon - Bare-metal web API framework for Python</title>
 
-    <!-- Preload fonts -->
+    <!-- Prime the font cache -->
     <script>
       if ('FontFace' in window) {
-
         var i = 0;
         var fonts = [
           ["Oxygen", "300", "/webfonts/oxygen-300.woff2"],
@@ -22,6 +21,8 @@
 
         for (; i < fonts.length; ++i) {
           (function () {
+
+            // NOTE(kgriffs): See also: https://goo.gl/1ENnDC
             var font = new FontFace(
               fonts[i][0],
               "url(" + fonts[i][2] + ")",
@@ -30,9 +31,11 @@
                 weight: fonts[i][1],
               }
             );
-            font.load().then(function() {
-              document.fonts.add(font);
-            });     
+
+            // NOTE(kgriffs): Don't call document.fonts.add(font) since that can cause 
+            //  FOUT. Instead, we rely on our font stylesheet to define the font faces
+            //  but using the same URL, so they end up using what we cached from here.
+            font.load();     
           })()
         }
       }
@@ -443,7 +446,6 @@ $ gunicorn sample:api</code></pre>
     <!-- Bootstrap deps -->
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-
 
   </body>
 </html>

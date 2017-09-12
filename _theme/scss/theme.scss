@@ -22,8 +22,7 @@
 @import "bootstrap/utilities";
 
 // Extra tweaks to make everything purty
-@import "tweaks.scss";
+@import "tweaks";
 
-// Font awesome
-@import "font-awesome/font-awesome-solid.css";
-@import "font-awesome/font-awesome-core.css";
+// Fonts
+@import "fonts";
