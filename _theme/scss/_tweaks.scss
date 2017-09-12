@@ -64,7 +64,7 @@ nav {
 }
 
 .table-benchmarks tbody tr:first-child {
-  background-color: lighten($color-primary, 30%);
+  background-color: $color-primary-light;
 
 }
 
@@ -76,6 +76,16 @@ nav {
 
 .featured-list {
   margin: 0 20px;
+}
+
+.jumbotron {
+  a {
+    color: darken($color-primary, 20%);
+  }
+
+  a:hover, a:active {
+   color: $color-primary; 
+  }
 }
 
 pre {
