@@ -75,7 +75,9 @@ nav {
 }
 
 .featured-list {
-  margin: 0 20px;
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: $content-max-width;
 }
 
 .jumbotron {
@@ -86,10 +88,16 @@ nav {
   a:hover, a:active {
    color: $color-primary; 
   }
+
+  .container {
+    max-width: $content-max-width;
+  }
 }
 
 pre {
-  margin: 1em 32px;
+  margin: 1em auto;
+  padding: 0 42px;
+  max-width: $content-max-width;
 }
 
 @media (max-width: 768px) { 
@@ -99,6 +107,16 @@ pre {
 }
 
 @media (max-width: 576px) { 
+  pre {
+    margin: 1em 0;
+    padding: 0 10px;
+  }
+
+  .featured-list {
+    margin: 0;
+    padding: 0 15px;
+  }
+
   #falconVersionLink:before {
     display: none;
   }
