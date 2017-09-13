@@ -9,7 +9,7 @@ function setLifetime() {
     var lifetime_delay = 5;
 
     function updateLifetime() {
-        lifetime_tick += lifetime / 100;
+        lifetime_tick += lifetime / 50;
 
         if (lifetime_tick < lifetime) {
             $("#lifetime").html(lifetime_tick.toFixed(2));
@@ -35,7 +35,9 @@ function setVersion() {
 
     }).done(function(package) {
 
-        $("#falconVersion").html(package.info.version);
+        $().ready(function() {
+            $("#falconVersion").html(package.info.version).addClass("ready");
+        });
 
     });    
 }
@@ -127,11 +129,12 @@ function insertBenchmarks() {
     }
 }
 
-$(document).ready(function() {
+// Kick this off first because PyPI is slow 
+setVersion();
+
+$().ready(function() {
 
     setLifetime();
-
-    setVersion();
 
     // $('pre code').each(function(i, block) {
     //     hljs.highlightBlock(block);
