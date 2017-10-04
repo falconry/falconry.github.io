@@ -8,45 +8,21 @@
 
     <title>Falcon - Bare-metal web API framework for Python</title>
 
+    <!-- Frontload this script so it is ready by the time we hit dynamics.js -->
+    <link rel="preload" href="/js/axios.min.js" as="script">
+
     <!-- Prime the font cache -->
-    <script>
-      if ('FontFace' in window) {
-        var i = 0;
-        var fonts = [
-          ["Oxygen", "300", "/webfonts/oxygen-300.woff2"],
-          ["Oxygen", "400", "/webfonts/oxygen-400.woff2"],
-          ["Oxygen", "700", "/webfonts/oxygen-700.woff2"],
-          ["Font Awesome 5 Solid", "900", "/webfonts/fontawesome-solid-900.woff2"],
-        ];
-
-        for (; i < fonts.length; ++i) {
-          (function () {
-
-            // NOTE(kgriffs): See also: https://goo.gl/1ENnDC
-            var font = new FontFace(
-              fonts[i][0],
-              "url(" + fonts[i][2] + ")",
-              {
-                style: "normal",
-                weight: fonts[i][1],
-              }
-            );
-
-            // NOTE(kgriffs): Don't call document.fonts.add(font) since that can cause 
-            //  FOUT. Instead, we rely on our font stylesheet to define the font faces
-            //  but using the same URL, so they end up using what we cached from here.
-            font.load();     
-          })()
-        }
-      }
-    </script>
+    <link rel="preload" href="/webfonts/oxygen-300.woff2" as="font" crossorigin>
+    <link rel="preload" href="/webfonts/oxygen-400.woff2" as="font" crossorigin>
+    <link rel="preload" href="/webfonts/oxygen-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/webfonts/fontawesome-solid-900.woff2" as="font" crossorigin>
 
     <!-- Styles -->
     <link rel="stylesheet" href="/css/theme.css">
     <link rel="stylesheet" href="/highlight/styles/railscasts.css">
 
     <!-- Behavior -->
-    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/axios.min.js"></script>
     <script src="/js/dynamics.js"></script>
 
     <!-- Icons -->
@@ -121,7 +97,7 @@
 <!--         <pre><code class="python"># sample.py
 
 import falcon
- 
+
 class QuoteResource:
     def on_get(self, req, resp):
         """Handles GET requests"""
@@ -134,7 +110,7 @@ class QuoteResource:
         }
 
         resp.media = quote
- 
+
 api = falcon.API()
 api.add_route('/quote', QuoteResource())</code></pre>
 
@@ -144,7 +120,7 @@ $ gunicorn sample:api</code></pre> -->
 <pre><code class="python hljs"><span class="hljs-comment"># sample.py</span>
 
 <span class="hljs-keyword">import</span> falcon
- 
+
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QuoteResource</span>:</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_get</span><span class="hljs-params">(self, req, resp)</span>:</span>
         <span class="hljs-string">"""Handles GET requests"""</span>
@@ -157,7 +133,7 @@ $ gunicorn sample:api</code></pre> -->
         }
 
         resp.media = quote
- 
+
 api = falcon.API()
 api.add_route(<span class="hljs-string">'/quote'</span>, QuoteResource())</code></pre>
 
@@ -176,7 +152,7 @@ $ gunicorn sample:api</code></pre>
           </div>
           <h3>Fast</h3>
           <p class="lead">
-            Falcon is a bare-metal Python web API framework for building very fast app backends and microservices.   
+            Falcon is a bare-metal Python web API framework for building very fast app backends and microservices.
           </p>
         </li>
 
@@ -280,7 +256,7 @@ $ gunicorn sample:api</code></pre>
           Perfection is finally attained not when there is no longer anything to add, but when there is no longer anything to take away.
         </p>
         <footer class="blockquote-footer"><cite title="Source Title">Antoine de Saint-Exupéry</cite></footer>
-      </blockquote>   
+      </blockquote>
     </div>
 
     <div id="sectionFeatures" class="jumbotron jumbotron-fluid mt-5">
@@ -309,7 +285,7 @@ $ gunicorn sample:api</code></pre>
             </ul>
 
           </div>
-          
+
           <div class="col-3 collapse-on-sm">
             <img src="img/flight-silhouettes.png" width="200" height="125">
           </div>
@@ -317,14 +293,14 @@ $ gunicorn sample:api</code></pre>
         </div>
       </div>
     </div>
-    
+
     <div class="container">
       <blockquote class="blockquote text-center m-5 py-3">
         <p>
           Don't lower your expectations to meet your performance. Raise your level of performance to meet your expectations. Expect the best of yourself, and then do what is necessary to make it a reality.
         </p>
         <footer class="blockquote-footer"><cite title="Source Title">Ralph Marston</cite></footer>
-      </blockquote>   
+      </blockquote>
     </div>
 
     <div id="sectionBenchmarks" class="jumbotron jumbotron-fluid">
@@ -336,7 +312,7 @@ $ gunicorn sample:api</code></pre>
           of running a simple benchmark across several popular Python web frameworks.
 
           We work very hard to ensure that Falcon itself will not be the bottleneck
-          in your application.  
+          in your application.
         </p>
 
         <p>
@@ -400,7 +376,7 @@ $ gunicorn sample:api</code></pre>
           In order to be great, you just have to care. You have to care about your world, community, and equality.
         </p>
         <footer class="blockquote-footer"><cite title="Source Title">Katori Hall</cite></footer>
-      </blockquote>  
+      </blockquote>
     </div>
 
     <div id="sectionCommunity" class="jumbotron jumbotron-fluid">
@@ -408,7 +384,7 @@ $ gunicorn sample:api</code></pre>
         <h1 class="display-4 section-title">Community</h1>
 
         <p class="lead">
-          Falcon is an <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache-licensed</a> community project, built and maintained by stylish volunteers from around the world. 
+          Falcon is an <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache-licensed</a> community project, built and maintained by stylish volunteers from around the world.
         </p>
 
         <img class="bordered-block float-right ml-3 collapse-on-sm" src="img/pycon-2016-falcon-web-framework-sprint-1.jpg" width="160" height="120" alt="PyCon 2016 Sprints">
@@ -418,10 +394,10 @@ $ gunicorn sample:api</code></pre>
         </p>
 
         <p>
-          A number of Falcon add-ons, templates, and complementary packages are available for use in your projects. We've listed several of these on the <a href="https://github.com/falconry/falcon/wiki" target="_blank">Falcon wiki</a> as a starting point, but you may also wish to search PyPI for additional resources.</p> 
+          A number of Falcon add-ons, templates, and complementary packages are available for use in your projects. We've listed several of these on the <a href="https://github.com/falconry/falcon/wiki" target="_blank">Falcon wiki</a> as a starting point, but you may also wish to search PyPI for additional resources.</p>
         <p>
           The Falconry community on Gitter is a great place to ask questions and share your ideas. You can find us in <a href="https://gitter.im/falconry/user" target="_blank">falconry/user</a>. We also have a <a href="https://gitter.im/falconry/dev" target="_blank">falconry/dev</a> room for discussing the design and development of the framework itself.
-        </p> 
+        </p>
 
 
 
@@ -438,7 +414,7 @@ $ gunicorn sample:api</code></pre>
         </p>
         <p>
           This website is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/4.0/" >Creative Commons Attribution 4.0 International License</a>.
-        </p>        
+        </p>
       </div>
     </footer>
 
@@ -446,8 +422,9 @@ $ gunicorn sample:api</code></pre>
     <!-- <script src="/highlight/highlight.pack.js"></script> -->
 
     <!-- Bootstrap deps -->
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script defer src="/js/jquery-3.2.1.min.js"></script>
+    <script defer src="/js/popper.min.js"></script>
+    <script defer src="/js/bootstrap.min.js"></script>
 
   </body>
 </html>
