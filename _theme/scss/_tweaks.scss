@@ -86,7 +86,7 @@ nav {
   }
 
   a:hover, a:active {
-   color: $color-primary; 
+   color: $color-primary;
   }
 
   .container {
@@ -110,13 +110,13 @@ pre {
   max-width: $content-max-width;
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   .collapse-on-sm {
     display: none;
   }
 }
 
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
   pre {
     margin: 1em 0;
     padding: 0 10px;
@@ -130,4 +130,19 @@ pre {
   #falconVersionLink:before {
     display: none;
   }
+}
+
+
+.onetime-donation-channels svg {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.onetime-donation-channels a {
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.recurring-pledges-channels a:hover {
+    text-decoration: none;
 }
