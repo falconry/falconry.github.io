@@ -367,11 +367,10 @@ $ gunicorn sample:api</code></pre>
         <h3 class="pt-4">Extended Test</h3>
         <p>
             Falcon was also benchmarked
-            under CPython 2.7.14 with a more realistic scenario, in which the routing table had
+            under CPython 3.6 with a more realistic scenario, in which the routing table had
             multiple entries, the query string contained percent-encoded characters, and several
             complex response headers were set in the response. Note that even when Falcon is doing
-            more work, it still is able to outperform other frameworks, such
-            as Bottle, which are only doing the bare minimum to construct
+            more work, it still is able to outperform other frameworks, which are only doing the bare minimum to construct
             a response.
         </p>
         <table id="benchmarksExtended"></table>
