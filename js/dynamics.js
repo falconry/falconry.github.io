@@ -55,61 +55,64 @@ function setVersion() {
 
 function insertBenchmarks() {
   const frameworkDisplay = {
-    falcon: 'Falcon (1.2.0)',
-    falcon_ext: 'Falcon Extended (1.2.0)',
+    falcon_cython: 'Falcon Cythonized (1.4.0)',
+    falcon: 'Falcon (1.4.0)',
+    falcon_ext: 'Falcon Extended (1.4.0)',
     bottle: 'Bottle (0.12.13)',
-    werkzeug: 'Werkzeug (0.12.1)',
+    werkzeug: 'Werkzeug (0.14.1)',
     flask: 'Flask (0.12.2)',
-    pecan: 'Pecan (1.2.1)'
+    django: 'Django (1.11.9)',
   }
 
   const data = [
     {
       id: 'benchmarksCPython27',
       results: [
-        ['falcon', 10, 37277, 26.83],
-        ['bottle', 5, 19633, 50.94],
-        ['werkzeug', 2, 7088, 141.08],
-        ['flask', 1, 3986, 250.86],
-        ['pecan', 1, 3659, 273.33],
+        ['falcon_cython', 27, 102563, 9.75],
+        ['falcon', 19, 70746, 14.14],
+        ['bottle', 9, 34059, 29.36],
+        ['werkzeug', 3, 9948, 100.52],
+        ['flask', 1, 5489, 182.17],
+        ['django', 1, 3712, 269.39],
       ]
     },
     {
       id: 'benchmarksCPython36',
       results: [
-        ['falcon', 28, 30479, 32.81],
-        ['bottle', 15, 16366, 61.10],
-        ['werkzeug', 7, 7575, 132.02],
-        ['flask', 4, 4262, 234.64],
-        ['pecan', 1, 1082, 924.48],
+        ['falcon_cython', 22, 75507, 13.24],
+        ['falcon', 17, 56525, 17.69],
+        ['bottle', 9, 30126, 33.19],
+        ['werkzeug', 3, 10989, 91.00],
+        ['flask', 2, 5971, 167.48],
+        ['django', 1, 3378, 296.06],
       ]
     },
     {
       id: 'benchmarksPyPy2',
       results: [
-        ['falcon', 34, 345728, 2.89],
-        ['bottle', 23, 234304, 4.27],
-        ['werkzeug', 6, 65313, 15.31],
-        ['flask', 1, 15088, 66.28],
-        ['pecan', 1, 10227, 97.78],
+        ['falcon', 21, 541378, 1.85],
+        ['bottle', 12, 306494, 3.26],
+        ['werkzeug', 5, 119060, 8.40],
+        ['django', 1, 28701, 34.84],
+        ['flask', 1, 26289, 38.04],
       ]
     },
     {
       id: 'benchmarksPyPy3',
       results: [
-        ['falcon', 126, 113666, 8.80],
-        ['bottle', 97, 87197, 11.47],
-        ['werkzeug', 17, 15095, 66.25],
-        ['flask', 14, 12723, 78.60],
-        ['pecan', 1, 901, 1109.67],
+        ['falcon', 9, 287819, 3.47],
+        ['bottle', 6, 188328, 5.31],
+        ['werkzeug', 2, 57033, 17.53],
+        ['flask', 1, 44512, 22.47],
+        ['django', 1, 30478, 32.81],
       ]
     },
     {
       id: 'benchmarksExtended',
       results: [
-        ['falcon_ext', 6, 23500, 42.55],
-        ['bottle', 5, 19633, 50.94],
-        ['flask', 1, 3986, 250.86],
+        ['falcon_ext', 10, 32420, 30.85],
+        ['flask', 2, 5971, 167.48],
+        ['django', 1, 3378, 296.06],
       ]
     },
   ];
@@ -124,11 +127,11 @@ function insertBenchmarks() {
       const resultRow = results[r];
 
       innerHTML += ([
-        '<tr>',
+        '<tr style="font-family: monospace, monospace;">',
         '<td>', frameworkDisplay[resultRow[0]], '</td>',
         '<td>', resultRow[1], 'x</td>',
         '<td>', resultRow[2].toLocaleString(), '</td>',
-        '<td>', resultRow[3], '</td>',
+        '<td>', resultRow[3].toFixed(2), '</td>',
         '</tr>'
       ].join(''));
 

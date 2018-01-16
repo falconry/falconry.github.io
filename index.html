@@ -319,8 +319,7 @@ $ gunicorn sample:api</code></pre>
           To give you a feel for Falcon's performance, we've included the results
           of running a simple benchmark across several popular Python web frameworks.
 
-          We work very hard to ensure that Falcon itself will not be the bottleneck
-          in your application.
+          Please note, however, that this benchmark is by no means comprehensive; it is only meant to provide a baseline performance comparison between the given frameworks.
         </p>
 
         <p>
@@ -333,35 +332,36 @@ $ gunicorn sample:api</code></pre>
         </p>
         <p>
           <strong>Method.</strong>
-          20,000 iterations were executed per trial, and the best time was
+          50,000 iterations were executed per trial (100,000 for the PyPy
+          tests), and the best time was
           recorded for each framework over 20 trials. The order in which
           the frameworks were tested was randomized for each trial. Also,
           garbage collection was enabled as it would be in a production
           environment, and a full collection was forcefully triggered
           before each trial. Finally, results were calculated using the
-          Decimal class, and rounded to the nearest whole number.
+          <strong>Decimal</strong> class, and rounded to the nearest whole
+          number.
         </p>
         <p>
           <strong>Platform.</strong>
-          Benchmarks were executed on a DigitalOcean 1GB VM, running
-          Ubuntu 16.04.2 with all system packages updated to their
-          latest versions as of May 2017. The frameworks were tested
-          on several different versions of Python.  Note that in
-          these tests the Falcon modules were not cythonized;
-          generally speaking, the reader may expect a ~10% boost in
-          performance when Falcon is installed with Cython.
+          Benchmarks were executed by running the corresponding
+          <a href="https://cloud.docker.com/swarm/falconry/repository/docker/falconry/falcon-bench/general">Docker images</a> on a Google Compute
+          Engine instance (Intel Skylake, 1vCPU, 2 GB RAM), running Ubuntu 17.10
+          with all system packages updated to their latest versions as of Jan
+          2018. The frameworks were tested on several different versions of
+          Python.
         </p>
 
-        <h3 class="pt-4">CPython 2.7.13</h3>
+        <h3 class="pt-4">CPython 2.7.14</h3>
         <table id="benchmarksCPython27"></table>
 
-        <h3 class="pt-4">CPython 3.6.1</h3>
+        <h3 class="pt-4">CPython 3.6.4</h3>
         <table id="benchmarksCPython36"></table>
 
-        <h3 class="pt-4">PyPy2 5.7.1</h3>
+        <h3 class="pt-4">PyPy2 5.10.0</h3>
         <table id="benchmarksPyPy2"></table>
 
-        <h3 class="pt-4">PyPy3 5.7.1-beta0</h3>
+        <h3 class="pt-4">PyPy3 5.10.1</h3>
         <table id="benchmarksPyPy3"></table>
 
         <h3 class="pt-4">Extended Test</h3>
