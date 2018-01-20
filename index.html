@@ -319,16 +319,28 @@ $ gunicorn sample:api</code></pre>
           To give you a feel for Falcon's performance, we've included the results
           of running a simple benchmark across several popular Python web frameworks.
 
-          Please note, however, that this benchmark is by no means comprehensive; it is only meant to provide a baseline performance comparison between the given frameworks.
+        </p>
+        <p>
+          Please note, however, that this benchmark is by no means comprehensive; it is only meant to provide a rough performance comparison between the given frameworks, and to demonstrate the baseline
+          per-request overhead each framework incurs on an application.
+        </p>
+        <p class="disclaimer">
+          As with any benchmark, you should take these numbers with
+          a grain of salt. You should always run your own
+          tests against your specific use case to discover what best
+          suits your needs.
         </p>
 
         <p>
           <strong>Scenario.</strong>
           The benchmark acts as a WSGI server and performs a GET request
-          directly on each framework's PEP-3333 app. Each app parses a route template
+          directly on each framework's PEP-3333 app. Requests are not sent over
+          the network, since the performance of a given network or web server
+          is not related to the performance of the WSGI frameworks themselves.
+          Regardless, each app parses a route template
           with a single embedded parameter, reads a query parameter and a header
           from the request data, sets an x-header on the response, and finally
-          returns a 10 KiB plain-text body, randomly generated.
+          returns a 10 KiB body, randomly generated.
         </p>
         <p>
           <strong>Method.</strong>

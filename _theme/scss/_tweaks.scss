@@ -146,3 +146,10 @@ pre {
 .recurring-pledges-channels a:hover {
     text-decoration: none;
 }
+
+.disclaimer {
+  padding: 25px;
+  font-weight: bold;
+  background-color: $color-primary-light;
+  border: 1px solid $gray-500;
+}
