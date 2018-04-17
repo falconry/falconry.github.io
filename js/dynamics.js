@@ -41,7 +41,7 @@ function setLifetime() {
 }
 
 function setVersion() {
-  axios.get('https://pypi.python.org/pypi/falcon/json')
+  axios.get('https://pypi.org/pypi/falcon/json')
     .then(function(response) {
 
       onReady( function () {
