@@ -17,8 +17,22 @@ body {
   color: $body-bg;
 }
 
-#sectionTitle {
-  margin: 140px auto 100px auto;
+#mainTitle {
+  margin: 110px auto 80px auto;
+}
+
+#sponsors {
+  margin-top: 60px;
+  line-height: 40px;
+}
+
+#sponsors img {
+  margin: 10px 20px;
+}
+
+#sponsors p {
+  margin: 0;
+  padding: 0;
 }
 
 .section-title, {
@@ -154,6 +168,19 @@ pre {
   border: 1px solid $gray-500;
 }
 
-#topside-action-buttons .btn {
-  margin-top: 5px;
+@media (max-width: 416px) {
+  #contributeButton {
+    display: none;
+  }
+}
+
+@media (max-width: 308px) {
+  #pledgeButton {
+    display: none;
+  }
+
+  #mainTitle h1 {
+    font-size: 5rem;
+  }
+
 }
