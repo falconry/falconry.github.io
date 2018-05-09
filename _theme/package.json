@@ -9,5 +9,8 @@
         "gulp-scss": "^1.4.0",
         "precss": "^2.0.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "npm": "^6.0.0",
+        "scss": "^0.2.4"
+    }
 }

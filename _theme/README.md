@@ -16,6 +16,7 @@ $ npm install --global gulp-cli
 
 ```bash
 $ npm install
+$ gem install sass
 ```
 
 ## Build the CSS
