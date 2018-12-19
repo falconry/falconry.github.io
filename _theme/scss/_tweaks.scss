@@ -146,6 +146,11 @@ pre {
   }
 }
 
+@media (max-width: 660px) {
+  #navbarPrimary {
+      display: none!important;
+  }
+}
 
 .onetime-donation-channels svg {
     vertical-align: middle;

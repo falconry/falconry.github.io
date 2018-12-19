@@ -6,11 +6,12 @@
         "gulp": "^3.9.1",
         "gulp-csso": "^3.0.1",
         "gulp-postcss": "^7.0.1",
-        "gulp-scss": "^1.4.0",
-        "precss": "^2.0.0"
+        "gulp-sass": "^4.0.2",
+        "native": "^0.3.3",
+        "precss": "^2.0.0",
+        "sass": "^1.15.2"
     },
     "dependencies": {
-        "npm": "^6.0.0",
-        "scss": "^0.2.4"
+        "npm": "^6.5.0"
     }
 }
