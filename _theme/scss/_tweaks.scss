@@ -48,11 +48,13 @@ nav {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  // <svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='#f0ad4e' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggc3Ryb2tlPScjZjBhZDRlJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA4aDI0TTQgMTZoMjRNNCAyNGgyNCcvPjwvc3ZnPg==");
 }
 
 .navbar-toggler-icon:hover, .navbar-toggler-icon:active {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-hover-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  // <svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='#f7e9b7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggc3Ryb2tlPScjZjdlOWI3JyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA4aDI0TTQgMTZoMjRNNCAyNGgyNCcvPjwvc3ZnPg==");
 }
 
 .navbar-toggler:focus {
@@ -124,11 +126,22 @@ pre {
   max-width: $content-max-width;
 }
 
-// @media (max-width: 768px) {
-//   .collapse-on-sm {
-//     display: none;
-//   }
-// }
+// Avoid pushing the right margin and uncentering the body on narrow screens
+@media (max-width: 400px) {
+  .display-4 {
+      font-size: 2.5rem;
+  }
+
+  .h3, h3 {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .collapse-on-sm {
+    display: none;
+  }
+}
 
 @media (max-width: 640px) {
   pre {
@@ -150,6 +163,10 @@ pre {
   display: none;
 }
 
+.onetime-donation-channels {
+  line-height: 55px;
+}
+
 .onetime-donation-channels svg {
     vertical-align: middle;
     margin-right: 5px;
@@ -158,6 +175,7 @@ pre {
 .onetime-donation-channels a {
   margin-right: 25px;
   cursor: pointer;
+  display: inline-block;
 }
 
 .recurring-pledges-channels a:hover {
