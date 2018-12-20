@@ -124,13 +124,13 @@ pre {
   max-width: $content-max-width;
 }
 
-@media (max-width: 768px) {
-  .collapse-on-sm {
-    display: none;
-  }
-}
+// @media (max-width: 768px) {
+//   .collapse-on-sm {
+//     display: none;
+//   }
+// }
 
-@media (max-width: 576px) {
+@media (max-width: 640px) {
   pre {
     margin: 1em 0;
     padding: 0 10px;
@@ -141,15 +141,13 @@ pre {
     padding: 0 15px;
   }
 
-  #falconVersionLink:before {
+  #falconVersionLink {
     display: none;
   }
 }
 
-@media (max-width: 660px) {
-  #navbarPrimary {
-      display: none!important;
-  }
+#falconVersionLink:before {
+  display: none;
 }
 
 .onetime-donation-channels svg {
