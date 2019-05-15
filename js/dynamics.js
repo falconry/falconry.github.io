@@ -55,64 +55,65 @@ function setVersion() {
 
 function insertBenchmarks() {
   const frameworkDisplay = {
-    falcon_cython: 'Falcon Cythonized (1.4.0)',
-    falcon: 'Falcon (1.4.0)',
-    falcon_ext: 'Falcon Extended (1.4.0)',
-    bottle: 'Bottle (0.12.13)',
-    werkzeug: 'Werkzeug (0.14.1)',
-    flask: 'Flask (0.12.2)',
-    django: 'Django (1.11.9)',
+    falcon_cython: 'Falcon Cythonized (2.0.0)',
+    falcon: 'Falcon (2.0.0)',
+    falcon_ext: 'Falcon Extended (2.0.0)',
+    bottle: 'Bottle (0.12.16)',
+    werkzeug: 'Werkzeug (0.15.4)',
+    flask: 'Flask (1.0.2)',
+    django: 'Django (1.11.20)',
+    django2: 'Django (2.2.1)',
   }
 
   const data = [
     {
-      id: 'benchmarksCPython27',
+      id: 'benchmarksCPython2',
       results: [
-        ['falcon_cython', 27, 102563, 9.75],
-        ['falcon', 19, 70746, 14.14],
-        ['bottle', 9, 34059, 29.36],
-        ['werkzeug', 3, 9948, 100.52],
-        ['flask', 1, 5489, 182.17],
-        ['django', 1, 3712, 269.39],
+        ['falcon_cython', 27, 78432, 12.75],
+        ['falcon', 17, 48930, 20.44],
+        ['bottle', 9, 25946, 38.54],
+        ['werkzeug', 3, 7535, 132.72],
+        ['flask', 1, 4382, 228.22],
+        ['django', 1, 2945, 339.55],
       ]
     },
     {
-      id: 'benchmarksCPython36',
+      id: 'benchmarksCPython3',
       results: [
-        ['falcon_cython', 22, 75507, 13.24],
-        ['falcon', 17, 56525, 17.69],
-        ['bottle', 9, 30126, 33.19],
-        ['werkzeug', 3, 10989, 91.00],
-        ['flask', 2, 5971, 167.48],
-        ['django', 1, 3378, 296.06],
+        ['falcon_cython', 41, 72679, 13.76],
+        ['falcon', 28, 50030, 19.99],
+        ['bottle', 15, 27281, 36.66],
+        ['werkzeug', 5, 9698, 103.11],
+        ['flask', 3, 5404, 185.06],
+        ['django2', 1, 1790, 558.60],
       ]
     },
     {
       id: 'benchmarksPyPy2',
       results: [
-        ['falcon', 21, 541378, 1.85],
-        ['bottle', 12, 306494, 3.26],
-        ['werkzeug', 5, 119060, 8.40],
-        ['django', 1, 28701, 34.84],
-        ['flask', 1, 26289, 38.04],
+        ['falcon', 20, 461399, 2.17],
+        ['bottle', 12, 290709, 3.44],
+        ['werkzeug', 4, 100040, 10.00],
+        ['django', 1, 31213, 32.04],
+        ['flask', 1, 23492, 42.57],
       ]
     },
     {
       id: 'benchmarksPyPy3',
       results: [
-        ['falcon', 9, 287819, 3.47],
-        ['bottle', 6, 188328, 5.31],
-        ['werkzeug', 2, 57033, 17.53],
-        ['flask', 1, 44512, 22.47],
-        ['django', 1, 30478, 32.81],
+        ['falcon', 75, 330676, 3.02],
+        ['bottle', 37, 162274, 6.16],
+        ['werkzeug', 11, 47395, 21.10],
+        ['flask', 8, 36746, 27.21],
+        ['django2', 1, 4436, 225.41],
       ]
     },
     {
       id: 'benchmarksExtended',
       results: [
-        ['falcon_ext', 10, 32420, 30.85],
-        ['flask', 2, 5971, 167.48],
-        ['django', 1, 3378, 296.06],
+        ['falcon_ext', 10, 29086, 34.38],
+        ['flask', 3, 5404, 185.06],
+        ['django2', 1, 1790, 558.60],
       ]
     },
   ];
