@@ -8,9 +8,6 @@
 
     <title>Falcon | The minimal, fast, and secure web framework for Python</title>
 
-    <!-- Frontload this script so it is ready by the time we hit dynamics.js -->
-    <link rel="preload" href="/js/axios.min.js" as="script">
-
     <!-- Prime the font cache -->
     <link rel="preload" href="/webfonts/oxygen-300.woff2" as="font" crossorigin>
     <link rel="preload" href="/webfonts/oxygen-400.woff2" as="font" crossorigin>
@@ -22,10 +19,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/css/theme.css">
     <link rel="stylesheet" href="/highlight/styles/railscasts.css">
-
-    <!-- Behavior -->
-    <script data-cfasync="false" src="/js/axios.min.js"></script>
-    <script data-cfasync="false" src="/js/dynamics.js"></script>
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=PY4q2AqpJE">
@@ -391,14 +384,8 @@ $ gunicorn sample:api</code></pre>
           different versions of Python.
         </p>
 
-        <h3 class="pt-4">CPython 2.7.16</h3>
-        <table id="benchmarksCPython2"></table>
-
         <h3 class="pt-4">CPython 3.7.3</h3>
         <table id="benchmarksCPython3"></table>
-
-        <h3 class="pt-4">PyPy2 7.1.1</h3>
-        <table id="benchmarksPyPy2"></table>
 
         <h3 class="pt-4">PyPy3 7.0.0</h3>
         <table id="benchmarksPyPy3"></table>
@@ -656,6 +643,9 @@ $ gunicorn sample:api</code></pre>
     <script defer src="/js/jquery-3.2.1.min.js"></script>
     <script defer src="/js/popper.min.js"></script>
     <script defer src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom components -->
+    <script src="/js/dynamics.js"></script>
 
   </body>
 </html>
