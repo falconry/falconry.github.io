@@ -31,7 +31,7 @@ function setVersion() {
     .then(response => response.json())
     .then(function (data) {
       const version = document.getElementById('falconVersion');
-      version.innerHTML = datan.info.version;
+      version.innerHTML = data.info.version;
       version.className += ' ready';
     });
 }
