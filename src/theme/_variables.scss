@@ -7,8 +7,8 @@ $content-max-width: 700px;
 // Colors
 // ------------------------------------------------------
 
-$color-primary: #f0ad4e;
-$color-primary-light: #f7e9b7;
+$primary: #f0ad4e;
+$primary-light: #f7e9b7;
 
 $white:  #fff;
 $gray-100: #f8f9fa;
@@ -22,55 +22,7 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black:  #080602;
 
-$grays: (
-  100: $gray-100,
-  200: $gray-200,
-  300: $gray-300,
-  400: $gray-400,
-  500: $gray-500,
-  600: $gray-600,
-  700: $gray-700,
-  800: $gray-800,
-  900: $gray-900
-);
-
-$blue:    #007bff;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #e83e8c;
-$red:     #dc3545;
-$orange:  #fd7e14;
-$yellow:  #ffc107;
-$green:   #28a745;
-$teal:    #20c997;
-$cyan:    #17a2b8;
-
-$colors: (
-  blue: $blue,
-  indigo: $indigo,
-  purple: $purple,
-  pink: $pink,
-  red: $red,
-  orange: $orange,
-  yellow: $yellow,
-  green: $green,
-  teal: $teal,
-  cyan: $cyan,
-  white: $white,
-  gray: $gray-600,
-  gray-dark: $gray-800
-);
-
-$theme-colors: (
-  primary: $color-primary,
-  secondary: $gray-600,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-100,
-  dark: $gray-800
-);
+$secondary: $gray-600;
 
 $body-bg:       $black;
 $body-color:    $gray-100;
@@ -94,10 +46,9 @@ $jumbotron-bg:                   $gray-100;
 // Navbar
 // ------------------------------------------------------
 
-$navbar-dark-base-color:           $color-primary;
-$navbar-dark-color:                $navbar-dark-base-color;
-$navbar-dark-hover-color:          darken($navbar-dark-base-color, 15%);
-$navbar-dark-active-color:         $navbar-dark-hover-color;
+$navbar-dark-color:                $primary;
+$navbar-dark-hover-color:          darken($primary, 15%);
+$navbar-dark-active-color:         $primary;
 $navbar-dark-disabled-color:       $gray-300;
 $navbar-dark-toggler-border-color: none;
 

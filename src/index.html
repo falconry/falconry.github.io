@@ -8,25 +8,15 @@
 
     <title>Falcon | The minimal, fast, and secure web framework for Python</title>
 
-    <!-- Prime the font cache -->
-    <link rel="preload" href="/webfonts/oxygen-300.woff2" as="font" crossorigin>
-    <link rel="preload" href="/webfonts/oxygen-400.woff2" as="font" crossorigin>
-    <link rel="preload" href="/webfonts/oxygen-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/webfonts/fontawesome-solid-900.woff2" as="font" crossorigin>
-
-    <link rel="preload" href="/img/logo.svg" as="image">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="/css/theme.css">
-    <link rel="stylesheet" href="/highlight/styles/railscasts.css">
+    <link rel="preload" href="img/logo.svg" as="image">
 
     <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=PY4q2AqpJE">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=PY4q2AqpJE">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=PY4q2AqpJE">
-    <link rel="manifest" href="/manifest.json?v=PY4q2AqpJE">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=PY4q2AqpJE" color="#f0ad4e">
-    <link rel="shortcut icon" href="/favicon.ico?v=PY4q2AqpJE">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=PY4q2AqpJE">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=PY4q2AqpJE">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=PY4q2AqpJE">
+    <link rel="manifest" href="manifest.json?v=PY4q2AqpJE">
+    <link rel="mask-icon" href="safari-pinned-tab.svg?v=PY4q2AqpJE" color="#f0ad4e">
+    <link rel="shortcut icon" href="favicon.ico?v=PY4q2AqpJE">
     <meta name="apple-mobile-web-app-title" content="Falcon Framework">
     <meta name="application-name" content="Falcon Framework">
     <meta name="theme-color" content="#080602">
@@ -80,7 +70,7 @@
             <a class="nav-link" href="https://github.com/falconry/falcon" target="_blank">GitHub</a>
           </li>
           <li class="nav-item">
-            <a id="falconVersionLink" class="nav-link" href="https://pypi.org/project/falcon/" target="_blank"><span class="fa fa-download"></span> <div id="falconVersion" class="d-inline-block"></div></a>
+            <a id="falconVersionLink" class="nav-link" href="https://pypi.org/project/falcon/" target="_blank"><i class="bi bi-download"></i> <div id="falconVersion" class="d-inline-block"></div></a>
           </li>
         </ul>
       </div><!--/.nav-collapse -->
@@ -121,7 +111,7 @@
 
     <div id="sectionExample" class="container-fluid">
       <div class="container-fluid">
-<!--         <pre><code class="python"># sample.py
+        <pre><code class="python"># sample.py
 
 import falcon
 
@@ -142,40 +132,14 @@ api = falcon.API()
 api.add_route('/quote', QuoteResource())</code></pre>
 
         <pre><code class="bash">$ pip install falcon
-$ gunicorn sample:api</code></pre> -->
-
-<pre><code class="python hljs"><span class="hljs-comment"># sample.py</span>
-
-<span class="hljs-keyword">import</span> falcon
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QuoteResource</span>:</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_get</span><span class="hljs-params">(self, req, resp)</span>:</span>
-        <span class="hljs-string">"""Handles GET requests"""</span>
-        quote = {
-            <span class="hljs-string">'quote'</span>: (
-                <span class="hljs-string">"I've always been more interested in "</span>
-                <span class="hljs-string">"the future than in the past."</span>
-            ),
-            <span class="hljs-string">'author'</span>: <span class="hljs-string">'Grace Hopper'</span>
-        }
-
-        resp.media = quote
-
-api = falcon.API()
-api.add_route(<span class="hljs-string">'/quote'</span>, QuoteResource())</code></pre>
-
-<pre><code class="bash hljs">$ pip install falcon
 $ gunicorn sample:api</code></pre>
-      </div>
-    </div>
-
 
     <div id="sectionAbout" class="container py-5"></div>
     <div class="container-fluid">
       <ul class="featured-list">
         <li>
           <div class="featured-list-icon">
-            <span class="fa fa-tachometer"></span>
+            <i class="bi bi-lightning-fill"></i>
           </div>
           <h3>Fast</h3>
           <p class="lead">
@@ -185,7 +149,7 @@ $ gunicorn sample:api</code></pre>
 
         <li>
           <div class="featured-list-icon">
-            <span class="fa fa-thumbs-up"></span>
+            <i class="bi bi-check-all"></i>
           </div>
           <h3>Reliable</h3>
           <p class="lead">
@@ -195,7 +159,7 @@ $ gunicorn sample:api</code></pre>
 
         <li>
           <div class="featured-list-icon">
-            <span class="fa fa-cloud"></span>
+            <i class="bi bi-cloud-fill"></i>
           </div>
           <h3>RESTful</h3>
           <p class="lead">
@@ -204,8 +168,9 @@ $ gunicorn sample:api</code></pre>
         </li>
 
         <li>
-          <div class="featured-list-icon features-list-icon-short">
-            <span class="fa fa-handshake"></span>
+          <div class="featured-list-icon">
+            <!-- <i class="bi bi-exclude"></i> -->
+            <i class="bi bi-shuffle"></i>
           </div>
 
           <h3>Complementary</h3>
@@ -216,7 +181,8 @@ $ gunicorn sample:api</code></pre>
 
         <li>
           <div class="featured-list-icon">
-            <span class="fa fa-cubes"></span>
+            <!-- <i class="bi bi-bounding-box"></i> -->
+            <i class="bi bi-hammer"></i>
           </div>
           <h3>Extensible</h3>
           <p class="lead">
@@ -229,7 +195,7 @@ $ gunicorn sample:api</code></pre>
 
         <li>
           <div class="featured-list-icon">
-            <span class="fa fa-server"></span>
+            <i class="bi bi-server"></i>
           </div>
           <h3>Compatible</h3>
           <p class="lead">
@@ -635,17 +601,6 @@ $ gunicorn sample:api</code></pre>
         </p>
       </div>
     </footer>
-
-    <!-- Syntax highlighting -->
-    <!-- <script src="/highlight/highlight.pack.js"></script> -->
-
-    <!-- Bootstrap deps -->
-    <script defer src="/js/jquery-3.2.1.min.js"></script>
-    <script defer src="/js/popper.min.js"></script>
-    <script defer src="/js/bootstrap.min.js"></script>
-
-    <!-- Custom components -->
-    <script src="/js/dynamics.js"></script>
 
   </body>
 </html>

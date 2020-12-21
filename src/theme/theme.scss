@@ -1,28 +1,12 @@
 // Bootstrap variable overrides
 @import "variables";
 
-// Bootstrap core (1 of 2)
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-@import "bootstrap/print";
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-@import "bootstrap/images";
-@import "bootstrap/code";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-@import "bootstrap/forms";
-@import "bootstrap/buttons";
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
-// Bootstrap components
-@import "components";
-
-// Bootstrap core (2 of 2)
-@import "bootstrap/utilities";
-
-// Extra tweaks to make everything purty
+// Extra tweaks and components
 @import "tweaks";
+@import "featured_list";
 
 // Fonts
 @import "fonts";
