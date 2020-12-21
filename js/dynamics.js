@@ -1,8 +1,9 @@
 function setLifetime() {
-  const CREATION_DATE = 1357365600;
+  const FALCON_EPOCH = 1357365600;
+  const SECONDS_PER_ORBITAL_ROTATION = 60 * 60 * 24 * 365;
 
-  const deltaSec = (Date.now() / 1000) - CREATION_DATE;
-  const lifetime = (deltaSec / 60 / 60 / 24 / 365).toFixed(2);
+  const deltaSec = (Date.now() / 1000) - FALCON_EPOCH;
+  const lifetime = (deltaSec / SECONDS_PER_ORBITAL_ROTATION).toFixed(2);
 
   const lifetimeElement = document.getElementById('lifetime');
 
