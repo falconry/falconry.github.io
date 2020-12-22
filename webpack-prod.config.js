@@ -8,7 +8,7 @@ const config = {
   mode: 'production',
   output: {
     filename: './assets/[name].[contenthash].js',
-    assetModuleFilename: './assets/[name].[contenthash][ext][query]',
+    assetModuleFilename: './assets/[name][ext][query]',
     path: path.resolve(__dirname, 'dist-prod'),
     publicPath: ''
   },
@@ -16,11 +16,11 @@ const config = {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
       {
         test: /\.(woff|woff2)$/i,
@@ -45,7 +45,11 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      favicon: './src/favicon.png',
       minify: false
+    }),
+    new MiniCssExtractPlugin({
+      filename: './[name].[contenthash].css'
     })
   ]
 };

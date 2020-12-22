@@ -16,11 +16,11 @@ const config = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(woff|woff2)$/i,
@@ -45,6 +45,7 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      favicon: './src/favicon.png',
       minify: false
     })
   ]

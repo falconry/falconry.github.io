@@ -8,12 +8,8 @@
 
     <title>Falcon | The minimal, fast, and secure web framework for Python</title>
 
-    <link rel="preload" href="img/logo.svg" as="image">
-
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=PY4q2AqpJE">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=PY4q2AqpJE">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=PY4q2AqpJE">
     <link rel="manifest" href="manifest.json?v=PY4q2AqpJE">
     <link rel="mask-icon" href="safari-pinned-tab.svg?v=PY4q2AqpJE" color="#f0ad4e">
     <link rel="shortcut icon" href="favicon.ico?v=PY4q2AqpJE">
@@ -133,6 +129,8 @@ api.add_route('/quote', QuoteResource())</code></pre>
 
         <pre><code class="bash">$ pip install falcon
 $ gunicorn sample:api</code></pre>
+      </div>
+    </div>
 
     <div id="sectionAbout" class="container py-5"></div>
     <div class="container-fluid">
@@ -351,10 +349,10 @@ $ gunicorn sample:api</code></pre>
         </p>
 
         <h3 class="pt-4">CPython 3.7.3</h3>
-        <table id="benchmarksCPython3"></table>
+        <table class="table text-dark" id="benchmarksCPython3"></table>
 
         <h3 class="pt-4">PyPy3 7.0.0</h3>
-        <table id="benchmarksPyPy3"></table>
+        <table class="table text-dark" id="benchmarksPyPy3"></table>
 
         <h3 class="pt-4">Extended Test</h3>
         <p>
@@ -365,7 +363,7 @@ $ gunicorn sample:api</code></pre>
             more work, it still is able to outperform other frameworks, which are only doing the bare minimum to construct
             a response.
         </p>
-        <table id="benchmarksExtended"></table>
+        <table class="table text-dark" id="benchmarksExtended"></table>
       </div>
     </div>
 

@@ -2,6 +2,10 @@ body {
   position: relative;
 }
 
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #df8a13;
+}
+
 .btn-outline-primary:hover {
   color: $body-bg;
 }
