@@ -3,7 +3,7 @@ name: Deploy page to production
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
 
