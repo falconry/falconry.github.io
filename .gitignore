@@ -4,3 +4,6 @@ node_modules
 # Custom build files
 dist-dev
 dist-prod
+
+# OS files
+.DS_Store

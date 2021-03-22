@@ -127,7 +127,7 @@ class QuoteResource:
 api = falcon.API()
 api.add_route('/quote', QuoteResource())</code></pre>
 
-        <pre><code class="bash">$ pip install falcon
+        <pre><code class="bash">$ pip install falcon gunicorn
 $ gunicorn sample:api</code></pre>
       </div>
     </div>
