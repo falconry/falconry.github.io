@@ -1,0 +1,63 @@
+// ------------------------------------------------------
+// Content
+// ------------------------------------------------------
+$content-max-width: 700px;
+
+// ------------------------------------------------------
+// Colors
+// ------------------------------------------------------
+
+$primary: #f0ad4e;
+$primary-light: #f7e9b7;
+
+$white:  #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:  #080602;
+
+$secondary: $gray-600;
+
+$body-bg:       $black;
+$body-color:    $gray-100;
+
+// ------------------------------------------------------
+// Fonts
+// ------------------------------------------------------
+
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-family-sans-serif: Oxygen, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+
+// ------------------------------------------------------
+// Jumbotron
+// ------------------------------------------------------
+
+$jumbotron-bg:                   $gray-100;
+
+
+// ------------------------------------------------------
+// Navbar
+// ------------------------------------------------------
+
+$navbar-dark-color:                $primary;
+$navbar-dark-hover-color:          darken($primary, 15%);
+$navbar-dark-active-color:         $primary;
+$navbar-dark-disabled-color:       $gray-300;
+$navbar-dark-toggler-border-color: none;
+
+// <svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='#f0ad4e' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>
+$navbar-dark-toggler-icon-bg:      url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggc3Ryb2tlPScjZjBhZDRlJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA4aDI0TTQgMTZoMjRNNCAyNGgyNCcvPjwvc3ZnPg==");
+
+
+// ------------------------------------------------------
+// Blockquote
+// ------------------------------------------------------
+
+$blockquote-font-size:    ($font-size-base * 1.5);
