@@ -6,9 +6,9 @@ Python Falcon Framework Marketing Site
 
 Install: `$ npm install`
 
-Serve files: `$ npm run-script watch`
+Serve files: `$ npm run serve`
 
-Build: `$ npm run-script build`
+Build: `$ npm run build`
 
 ## Deployment
 
