@@ -7,7 +7,7 @@
     "build": "webpack --config webpack-prod.config.js"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.4.0",
     "highlight.js": "^10.5.0",
     "jquery": "^3.6.0",
