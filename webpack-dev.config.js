@@ -32,7 +32,22 @@ const config = {
       },
       {
         test: /\.(html)$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
+        options: {
+          sources: {
+            list: [
+              '...',
+              {
+                tag: 'link',
+                attribute: 'href',
+                type: 'src',
+                filter: (tag, attribute, attributes, resourcePath) => {
+                  return attributes.some(attr => attr.rel === 'shortcut icon');
+                }
+              },
+            ]
+          }
+        }
       }
     ]
   },
