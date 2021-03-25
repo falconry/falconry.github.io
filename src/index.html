@@ -141,7 +141,7 @@ $ gunicorn sample:api</code></pre>
           </div>
           <h3>Fast</h3>
           <p class="lead">
-            Falcon is a blazing fast, minimalist Python web API framework for building reliable app backends and microservices.
+            Falcon is a blazing fast, minimalist Python web API framework for building robust app backends and microservices. The framework works great with both asyncio (<a href="https://asgi.readthedocs.io"  target="_blank">ASGI</a>) and gevent/meinheld (<a href="https://wsgi.readthedocs.io" target="_blank">WSGI</a>).
           </p>
         </li>
 
@@ -151,7 +151,7 @@ $ gunicorn sample:api</code></pre>
           </div>
           <h3>Reliable</h3>
           <p class="lead">
-            Organizations like LinkedIn, Leadpages, Wargaming, and Rackspace <a href="https://github.com/falconry/falcon/wiki/Who's-using-Falcon%3F" target="_blank">rely on Falcon</a> for critical projects.
+             LinkedIn, Paypal, Wargaming, GOVCERT.LU, <a href="https://github.com/falconry/falcon/wiki/Who's-using-Falcon%3F" target="_blank">and many others</a> rely on Falcon to power mission-critical services. Falcon focuses on stability, correctness, and performance at scale.
           </p>
         </li>
 
@@ -161,7 +161,7 @@ $ gunicorn sample:api</code></pre>
           </div>
           <h3>RESTful</h3>
           <p class="lead">
-            The Falcon web framework encourages the REST architectural style. Resource classes implement HTTP method handlers that resolve requests and perform state transitions.
+            The Falcon web framework encourages the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST architectural style</a>. Resource classes implement HTTP method handlers that resolve requests and perform state transitions.
           </p>
         </li>
 
@@ -172,7 +172,7 @@ $ gunicorn sample:api</code></pre>
 
           <h3>Complementary</h3>
           <p class="lead">
-            Falcon complements more general Python web frameworks by providing extra performance and flexibility wherever you need it.
+            Falcon complements more general Python web frameworks by providing extra reliability, flexibility, and performance wherever you need it.
           </p>
         </li>
 
@@ -195,8 +195,7 @@ $ gunicorn sample:api</code></pre>
           </div>
           <h3>Compatible</h3>
           <p class="lead">
-            Thanks to WSGI, Falcon runs on a large variety of web servers and platforms. Falcon works great with CPython 2.6, 2.7, and 3.4+. Or try <a href="https://www.pypy.org" target="_blank">PyPy</a> for an extra speed boost. Falcon
-            supports both PyPy2.7 and PyPy3.5 as of PyPy v5.10.
+            Thanks to <a href="https://asgi.readthedocs.io"  target="_blank">ASGI</a> and <a href="https://wsgi.readthedocs.io" target="_blank">WSGI</a>, Falcon runs on a large variety of web servers and platforms. Falcon works great with CPython 3.5+. Or try <a href="https://www.pypy.org" target="_blank">PyPy</a> for an extra speed boost!
           </p>
         </li>
 
@@ -212,24 +211,14 @@ $ gunicorn sample:api</code></pre>
         general Python web frameworks by providing extra performance,
         reliability, and flexibility wherever you need it.</p>
 
-        <p><strong>Fast.</strong> Same hardware, more requests. Falcon turns around
-        requests several times faster than most other Python frameworks. For
-        an extra speed boost, Falcon compiles itself with Cython when
-        available, and also works well with <a href="https://pypy.org" target="_blank">PyPy</a>.
-        Considering a move to another programming language? Benchmark with
-        Falcon + PyPy first.</p>
         <p><strong>Reliable.</strong> We go to great lengths to avoid introducing
         breaking changes, and when we do they are fully documented and only
         introduced (in the spirit of
         <a href="http://semver.org/" target="_blank">SemVer</a>) with a major version
         increment. The code is rigorously tested with numerous inputs and we
-        require 100% coverage at all times. Six and mimeparse are the only
-        third-party dependencies.</p>
-        <p><strong>Flexible.</strong> Falcon leaves a lot of decisions and implementation
-        details to you, the API developer. This gives you a lot of freedom to
-        customize and tune your implementation. Due to Falcon's minimalist
-        design, Python community members are free to independently innovate on
-        <a href="https://github.com/falconry/falcon/wiki" target="_blank">Falcon add-ons and complementary packages</a>.</p>
+        require 100% coverage at all times. Falcon has no dependencies outside
+        the standard library, helping minimize your app's attack surface while
+        avoiding transitive bugs and breaking changes.</p>
         <p><strong>Debuggable.</strong> Falcon eschews magic. It's easy to tell which inputs
         lead to which outputs. Unhandled exceptions are never encapsulated or
         masked. Potentially surprising behaviors, such as automatic request body
@@ -237,6 +226,19 @@ $ gunicorn sample:api</code></pre>
         comes to the framework itself, we take care to keep logic paths simple
         and understandable. All this makes it easier to reason about the code
         and to debug edge cases in large-scale deployments.</p>
+        <p><strong>Fast.</strong> Same hardware, more requests. Falcon turns around
+        requests significantly faster than other popular Python frameworks like
+        Django and Flask. For an extra speed boost, Falcon compiles itself with Cython when
+        available, and also works well with <a href="https://pypy.org" target="_blank">PyPy</a>.
+        Considering a move to another programming language? Benchmark with
+        Falcon+PyPy first!</p>
+        <p><strong>Flexible.</strong> Falcon leaves a lot of decisions and implementation
+        details to you, the API developer. This gives you a lot of freedom to
+        customize and tune your implementation. It also helps you
+        understand your apps at a deeper level, making
+        them easier to tune, debug, and refactor over the long run.
+        Falcon's minimalist design provides space for Python community members to independently innovate on
+        <a href="https://github.com/falconry/falcon/wiki" target="_blank">Falcon add-ons and complementary packages</a>.</p>
       </div>
     </div>
 
@@ -261,17 +263,18 @@ $ gunicorn sample:api</code></pre>
           <div class="col">
 
             <ul class="pl-4 lead">
+              <li>ASGI, WSGI, and WebSocket support</li>
+              <li>Native asyncio support</li>
+              <li>No reliance on magic globals for routing and state management</li>
+              <li>Stable interfaces with an emphasis on backwards-compatibility</li>
+              <li>Simple API modeling through centralized RESTful routing</li>
               <li>Highly-optimized, extensible code base</li>
-              <li>Intuitive routing via URI templates and REST-inspired resource
-              classes</li>
-              <li>Easy access to headers and bodies through request and response
-              classes</li>
               <li>DRY request processing via middleware components and hooks</li>
+              <li>Strict adherence to RFCs</li>
               <li>Idiomatic HTTP error responses</li>
               <li>Straightforward exception handling</li>
-              <li>Snappy unit testing through WSGI helpers and mocks</li>
-              <li>CPython 2.6-2.7 and 3.4+, or PyPy 2.7 and 3.5+</li>
-              <li>Cython support for an extra speed boost under CPython</li>
+              <li>WSGI/ASGI testing helpers and mocks</li>
+              <li>CPython 3.5+ and PyPy 3.5+ support</li>
             </ul>
 
           </div>
