@@ -9,4 +9,4 @@ import './dynamics.js';
 
 hljs.registerLanguage('python', python);
 hljs.registerLanguage('bash', bash);
-hljs.initHighlightingOnLoad();
+hljs.highlightAll();
