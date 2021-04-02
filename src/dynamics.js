@@ -105,6 +105,17 @@ function insertBenchmarks() {
   });
 }
 
+function handleClick() {
+  const button = document.querySelector('.navbar-toggler');
+  if(!button){
+    return;
+  }
+  document.getElementById('navbarPrimary').addEventListener('click', function(event) {
+    button.click();
+  });
+}
+
 setVersion();
 setLifetime();
 insertBenchmarks();
+handleClick();
