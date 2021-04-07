@@ -111,7 +111,9 @@ function handleClick() {
     return;
   }
   document.getElementById('navbarPrimary').addEventListener('click', function(event) {
-    button.click();
+    if(getComputedStyle(button).display !== 'none'){
+      button.click();
+    }
   });
 }
 
