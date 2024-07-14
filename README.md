@@ -12,4 +12,4 @@ Build: `$ npm run build`
 
 ## Deployment
 
-All new pushs to the main branch trigger a GitHub action which build the site and deploy it to the _gh-pages_ branch.
+All new pushes to the main branch trigger a GitHub action which builds the site and deploy it to the _gh-pages_ branch.
