@@ -9,7 +9,7 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.11.3",
-    "highlight.js": "^10.7.2",
+    "highlight.js": "^11.11.1",
     "jquery": "^3.7.1",
     "popper.js": "^1.16.1"
   },
