@@ -87,7 +87,7 @@
         <p>A Big Thank You to Our Project Patrons</p>
 
         <p>
-            <a href="https://www.lambdatest.com/?utm_source=falcon&utm_medium=sponsor" target="_blank"><img src="img/sponsors/lambdatest.png" height="64" alt="LambdaTest" style="margin-right: 10px"></a>
+            <a href="https://www.lambdatest.com/?utm_source=falcon&utm_medium=sponsor" target="_blank"><img src="img/sponsors/lambdatest.png" height="64" alt="LambdaTest"></a>
 
             <a href="https://www.govcert.lu/" target="_blank"><img src="img/sponsors/govcert.png" width="220" alt="CERT Gouvernemental Luxembourg" style="margin-right: 10px"></a>
 
@@ -108,17 +108,12 @@ import falcon
 
 
 class QuoteResource:
-    def on_get(self, req, resp):
+    def on_get(self, req: falcon.Request, resp: falcon.Response) -> None:
         """Handle GET requests."""
-        quote = {
+        resp.media = {
+            'quote': "I've always been more interested in the future than in the past.",
             'author': 'Grace Hopper',
-            'quote': (
-                "I've always been more interested in "
-                "the future than in the past."
-            ),
         }
-
-        resp.media = quote
 
 
 app = falcon.App()
