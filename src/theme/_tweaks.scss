@@ -18,7 +18,7 @@ body {
 .jumbotron {
   margin: 2em 0;
   padding-top: 5em;
-  color: $body-bg;
+  color: $black;
 }
 
 #mainTitle {
@@ -85,7 +85,6 @@ nav {
 
 .table-benchmarks tbody tr:first-child {
   background-color: $primary-light;
-
 }
 
 .table-benchmarks {
