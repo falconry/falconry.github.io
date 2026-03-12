@@ -10,6 +10,30 @@ body {
   color: $body-bg;
 }
 
+.navbar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mt-6 {
+  margin-top: 110px !important;
+}
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.display-4 {
+  margin-bottom: 0.5rem;
+}
+
+.text-muted {
+  color: $gray-500 !important;
+}
+
 #documentFooter {
   margin: 4em 0;
   font-size: smaller;
@@ -18,7 +42,12 @@ body {
 .jumbotron {
   margin: 2em 0;
   padding-top: 5em;
+  background-color: $gray-100;
   color: $black;
+
+  .table {
+    color: $black;
+  }
 }
 
 #mainTitle {

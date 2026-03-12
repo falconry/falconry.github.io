@@ -1,4 +1,4 @@
-import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap.esm';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import hljs from 'highlight.js/lib/core';
 import python from 'highlight.js/lib/languages/python';

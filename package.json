@@ -7,11 +7,10 @@
     "build": "webpack --config webpack-prod.config.js"
   },
   "dependencies": {
-    "bootstrap": "^4.6.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
-    "highlight.js": "^10.7.2",
-    "jquery": "^3.7.1",
-    "popper.js": "^1.16.1"
+    "highlight.js": "^10.7.2"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
