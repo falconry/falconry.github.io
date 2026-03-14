@@ -1,7 +1,3 @@
-@use "variables" as *;
-@use "sass:color";
-@import "~bootstrap/scss/bootstrap";
-
 body {
   position: relative;
 }
@@ -172,7 +168,7 @@ nav {
 
 .jumbotron {
   a {
-    color: color.scale($primary, $lightness: -20%);
+    color: darken($primary, 20%);
   }
 
   a:hover, a:active {

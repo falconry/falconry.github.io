@@ -1,9 +1,12 @@
-@use "variables";
-@use "tweaks";
-@use "featured_list";
+// Bootstrap variable overrides
+@import "variables";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+// Extra tweaks and components
+@import "tweaks";
+@import "featured_list";
 
 // Fonts
 @import "fonts";
