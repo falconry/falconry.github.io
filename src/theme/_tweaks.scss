@@ -189,6 +189,11 @@ pre {
   margin: 1em auto;
   padding: 0 42px;
   max-width: $content-max-width;
+  background-color: #282828;
+}
+
+.hljs {
+  background: #282828 !important;
 }
 
 // Avoid pushing the right margin and uncentering the body on narrow screens
