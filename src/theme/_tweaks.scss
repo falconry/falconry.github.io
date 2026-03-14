@@ -1,3 +1,5 @@
+@use "sass:color";
+
 body {
   position: relative;
 }
@@ -10,6 +12,30 @@ body {
   color: $body-bg;
 }
 
+.navbar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mt-6 {
+  margin-top: 110px !important;
+}
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.display-4 {
+  margin-bottom: 0.5rem;
+}
+
+.text-muted {
+  color: $gray-500 !important;
+}
+
 #documentFooter {
   margin: 4em 0;
   font-size: smaller;
@@ -18,11 +44,18 @@ body {
 .jumbotron {
   margin: 2em 0;
   padding-top: 5em;
-  color: $body-bg;
+  padding-bottom: 5em;
+  background-color: $gray-100;
+  color: $black;
+
+  .table {
+    background-color: white;
+    color: $black;
+  }
 }
 
 #mainTitle {
-  margin: 110px auto 80px auto;
+  margin: 160px auto 80px auto;
 }
 
 #sponsors {
@@ -39,6 +72,19 @@ body {
   padding: 0;
 }
 
+/* Add spacing after sections before quote blocks (section dividers) */
+.jumbotron {
+  margin-bottom: 6em !important;
+}
+
+/* Add spacing before quote blocks (section dividers) */
+.container > .blockquote {
+  margin-top: 4em !important;
+  max-width: 1000px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .section-title {
   margin-left: -3px;
 }
@@ -51,18 +97,23 @@ nav {
   margin: 0.5em 0;
 }
 
-// .navbar-toggler-icon {
-//   // <svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='#f0ad4e' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>
-//   background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggc3Ryb2tlPScjZjBhZDRlJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA4aDI0TTQgMTZoMjRNNCAyNGgyNCcvPjwvc3ZnPg==");
-// }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggc3Ryb2tlPScjZjBhZDRlJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA4aDI0TTQgMTZoMjRNNCAyNGgyNCcvPjwvc3ZnPg==");
+}
 
-// .navbar-toggler-icon:hover, .navbar-toggler-icon:active {
-//   // <svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='#f7e9b7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>
-//   background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggc3Ryb2tlPScjZjdlOWI3JyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA4aDI0TTQgMTZoMjRNNCAyNGgyNCcvPjwvc3ZnPg==");
-// }
+.navbar-toggler-icon:hover, .navbar-toggler-icon:active {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggc3Ryb2tlPScjZjdlOWI3JyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA4aDI0TTQgMTZoMjRNNCAyNGgyNCcvPjwvc3ZnPg==");
+}
+
+.navbar-toggler {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
 
 .navbar-toggler:focus {
   outline: none;
+  box-shadow: none;
 }
 
 #falconVersionLink:before {
@@ -75,6 +126,25 @@ nav {
   box-shadow: 2px 2px 4px 0 #000;
 }
 
+.table-benchmarks,
+.jumbotron .table {
+  background-color: white !important;
+  
+  tbody,
+  thead,
+  tr:first-child,
+  tr:first-child th,
+  tr:first-child td {
+    border: none;
+  }
+  
+  th,
+  td {
+    background-color: white !important;
+    border-bottom: none;
+  }
+}
+
 .table-benchmarks th:nth-child(n+2) {
   text-align: right;
 }
@@ -84,13 +154,11 @@ nav {
 }
 
 .table-benchmarks tbody tr:first-child {
-  background-color: $primary-light;
+  background-color: $primary-light !important;
 
-}
-
-.table-benchmarks {
-  tbody, thead, tr:first-child, tr:first-child th, tr:first-child td {
-    border: none;
+  th,
+  td {
+    background-color: $primary-light !important;
   }
 }
 
@@ -102,7 +170,7 @@ nav {
 
 .jumbotron {
   a {
-    color: darken($primary, 20%);
+    color: color.scale($primary, $lightness: -20%);
   }
 
   a:hover, a:active {
@@ -128,6 +196,11 @@ pre {
   margin: 1em auto;
   padding: 0 42px;
   max-width: $content-max-width;
+  background-color: #1d2021;
+}
+
+.hljs {
+  background: #1d2021 !important;
 }
 
 // Avoid pushing the right margin and uncentering the body on narrow screens
