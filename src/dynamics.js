@@ -100,7 +100,7 @@ function insertBenchmarks() {
     innerHTML += '</tbody>'
 
     const table = document.getElementById(item.id);
-    table.className += ' table table-benchmarks table-striped table-responsive'
+    table.className += ' table table-benchmarks table-responsive'
     table.innerHTML = innerHTML
   });
 }
