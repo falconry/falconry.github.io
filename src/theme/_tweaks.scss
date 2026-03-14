@@ -1,3 +1,5 @@
+@use "sass:color";
+
 body {
   position: relative;
 }
@@ -168,7 +170,7 @@ nav {
 
 .jumbotron {
   a {
-    color: darken($primary, 20%);
+    color: color.scale($primary, $lightness: -20%);
   }
 
   a:hover, a:active {
