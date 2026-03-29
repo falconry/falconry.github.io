@@ -10,20 +10,23 @@ function setLifetime() {
   let lifetimeTick = 0;
   let lifetimeDelay = 5;
 
+  let tempLifetime = convSciNotation(lifetime);
+
   function updateLifetime() {
     lifetimeTick += lifetime / 50;
     if (lifetimeTick < lifetime) {
-      lifetimeElement.innerHTML = String(lifetimeTick.toFixed(2));
+      lifetimeElement.innerHTML = String(convSciNotation(lifetimeTick.toFixed(2)));
       if ((lifetimeTick / lifetime) > 0.8) {
         lifetimeDelay *= 1.1;
       }
       setTimeout(updateLifetime, lifetimeDelay);
     }
     else {
-      lifetimeElement.innerHTML = lifetime;
+      lifetimeElement.innerHTML = tempLifetime;
     }
   }
 
+  
   updateLifetime();
 }
 
@@ -117,7 +120,16 @@ function handleClick() {
   });
 }
 
+
+// function to convert a quantity to scientific notation with 3 significant digits
+function convSciNotation(qty) {
+  const exponent = Math.floor(Math.log10(qty));
+  const mantissa = qty / Math.pow(10, exponent);
+  return `${mantissa.toFixed(3)} x 10 <sup> ${(-1) * exponent}</sup>`; 
+}
+
 setVersion();
 setLifetime();
 insertBenchmarks();
 handleClick();
+
