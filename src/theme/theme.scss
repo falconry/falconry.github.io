@@ -1,12 +1,32 @@
-// Bootstrap variable overrides
-@import "variables";
-
-// Bootstrap
-@import "~bootstrap/scss/bootstrap";
+// Bootstrap with variable overrides
+@use "bootstrap/scss/bootstrap" with (
+  $primary: #f0ad4e,
+  $white: #fff,
+  $gray-100: #f8f9fa,
+  $gray-200: #e9ecef,
+  $gray-300: #dee2e6,
+  $gray-400: #ced4da,
+  $gray-500: #adb5bd,
+  $gray-600: #868e96,
+  $gray-700: #495057,
+  $gray-800: #343a40,
+  $gray-900: #212529,
+  $black: #080602,
+  $secondary: #868e96,
+  $body-bg: #080602,
+  $body-color: #f8f9fa,
+  $font-family-sans-serif: (Oxygen, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif),
+  $blockquote-font-size: 1.5rem,
+  $navbar-dark-color: #f0ad4e,
+  $navbar-dark-hover-color: #495057,
+  $navbar-dark-active-color: #f0ad4e,
+  $navbar-dark-disabled-color: #dee2e6,
+  $navbar-dark-toggler-icon-bg: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMzIgMzInIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggc3Ryb2tlPScjZjBhZDRlJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLW1pdGVybGltaXQ9JzEwJyBkPSdNNCA4aDI0TTQgMTZoMjRNNCAyNGgyNCcvPjwvc3ZnPg=="),
+);
 
 // Extra tweaks and components
-@import "tweaks";
-@import "featured_list";
+@use "tweaks";
+@use "featured_list";
 
 // Fonts
-@import "fonts";
+@use "fonts";

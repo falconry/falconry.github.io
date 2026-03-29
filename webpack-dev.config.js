@@ -20,7 +20,10 @@ const config = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', {
+          loader: 'sass-loader',
+          options: { sassOptions: { quietDeps: true } }
+        }]
       },
       {
         test: /\.(woff|woff2)$/i,

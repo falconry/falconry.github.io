@@ -20,7 +20,10 @@ const config = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', {
+          loader: 'sass-loader',
+          options: { sassOptions: { quietDeps: true } }
+        }]
       },
       {
         test: /\.(woff|woff2)$/i,
