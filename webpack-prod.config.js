@@ -54,6 +54,11 @@ const config = {
       }
     ]
   },
+  performance: {
+    maxAssetSize: 500000,
+    maxEntrypointSize: 500000,
+    hints: 'warning', 
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new CopyPlugin({
