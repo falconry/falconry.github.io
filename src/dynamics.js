@@ -3,7 +3,8 @@ function setLifetime() {
   const SECONDS_PER_ORBITAL_ROTATION = 31558149.504000004;  // seconds per year
 
   const deltaSec = (Date.now() / 1000) - FALCON_EPOCH;
-  const lifetime = (deltaSec / SECONDS_PER_ORBITAL_ROTATION).toFixed(2);
+  const lifetimeYears = deltaSec / SECONDS_PER_ORBITAL_ROTATION;
+  const lifetime = lifetimeYears / 10;
 
   const lifetimeElement = document.getElementById('lifetime');
 
@@ -20,7 +21,7 @@ function setLifetime() {
       setTimeout(updateLifetime, lifetimeDelay);
     }
     else {
-      lifetimeElement.innerHTML = lifetime;
+      lifetimeElement.innerHTML = String(lifetime.toFixed(2));
     }
   }
 
